@@ -1,0 +1,96 @@
+#shipping{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+    width: 100%;
+}
+#shipping > header {
+    display: flex;
+    width: 100%;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#shipping > header > h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    font-family: 'Roboto';
+    font-size: 16px;
+    text-transform: capitalize;
+}
+#shipping > form {
+    width: 100%;
+    padding: 20px ;
+    display: flex;
+    flex-direction: column;
+}
+#shipping > form label {
+    display: flex;
+    margin-top: 7px;
+    align-items: center;
+    color: inherit;
+}
+#shipping > form input {
+    font-family: 'Roboto mono';
+    padding: 12px;
+    border-radius: 3px;
+    background: transparent;
+    outline: none;
+    color: inherit;
+    font-size: 12px;
+}
+#shipping_state{
+    font-family: 'Roboto mono';
+    padding: 12px;
+    border-radius: 3px;
+    background: transparent;
+    outline: none;
+    color: inherit;
+    font-size: 12px;  
+}
+#shipping > form label em {
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-weight: 400;
+    padding-left: 10px;
+    color: rgb(160, 160, 160);
+}
+#shipping > form textarea {
+    min-height: 50px;
+    resize: none;
+    font-family: 'Roboto mono';
+    padding: 10px;
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+    color: inherit;
+    font-size: 12px;
+    overflow-y: hidden;
+    margin-bottom: 15px;
+}
+/* ------- */
+#shipping_button {
+    background: none;
+    border: 2px solid grey;
+    border-radius: 3px;
+    padding: 10px;
+    font-family: 'Roboto';
+    width: 100%;
+    color: inherit;
+}
+#shipping_button:hover {
+    border: 2px solid var(--bColor);
+    background-color: black;
+    color: var(--bColor);
+}
+
+@media screen and (max-width: 500px) {
+    #shipping > form {
+        padding: 10px ;
+    }
+    #shipping > header {
+        padding: 15px 10px ;
+    }
+}

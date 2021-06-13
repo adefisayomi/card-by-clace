@@ -1,0 +1,31 @@
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    padding: 2px;
+    position: relative;
+    font-family: 'Roboto';
+    cursor: pointer;
+    border: 2px solid rgb(35, 80, 117);
+}
+.logo_loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.logo a {
+    margin: 0;
+    color: rgb(13, 35, 53);
+    padding: 0;
+    font-weight: 900;
+    font-size: 17px;
+    text-transform: capitalize;
+    font-family: 'Roboto';
+}
+.logo > a:hover {
+    text-decoration: none;
+}

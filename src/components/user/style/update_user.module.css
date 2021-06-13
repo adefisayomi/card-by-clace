@@ -1,0 +1,120 @@
+#profile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    color: inherit;
+    border-radius: 5px;
+}
+#profile > header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 5px;
+   color: inherit;
+   width: 100%;
+   border-bottom: 0.5px solid rgb(221, 221, 221);
+}
+/* --------------------------- */
+#profile form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: inherit;
+    width: 100%;
+}
+.social_media_list{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+    padding: 5px;
+}
+.profile_social {
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid rgb(224, 224, 224);
+    padding: 10px;
+}
+.social_media_list > a {
+    font-weight: 400;
+    font-size: 11px;
+    padding-left: 5px;
+    font-family: 'Roboto';
+}
+#profile > form > h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    font-weight: 900;
+    /* margin-bottom: 20px; */
+    font-size: 14px;
+    text-transform: uppercase;
+}
+#profile > form label {
+    font-family: 'Roboto';
+    text-transform: capitalize;
+    color: inherit;
+    font-size: 12.5px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+#profile > form input {
+    font-family: 'Roboto mono';
+    padding: 12px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    outline: none;
+    border-radius: 3px;
+    font-size: 12px;
+}
+#profile_dropdown {
+    font-family: 'Roboto mono';
+    padding: 12px;
+    background: transparent;
+    border-radius: 3px;
+    color: inherit;
+    outline: none;
+    font-size: 12px;  
+}
+#profile > form label em {
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-weight: 400;
+    color: rgb(160, 160, 160);
+}
+#profile > form textarea {
+    min-height: 30px;
+    resize: none;
+    font-family: 'Roboto mono';
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 12px;
+    overflow-y: hidden;
+}
+#profile > form button {
+    background: none;
+    border: 2px solid grey;
+    border-radius: 3px;
+    padding: 10px;
+    font-family: 'Roboto';
+    width: 100%;
+    color: inherit;
+}
+#profile > form button:hover {
+    border: 2px solid var(--bColor);
+    background-color: black;
+    color: var(--bColor);
+}
+
+@media screen and (max-width: 500px) {
+    #profile > form label {
+        margin-top: 10px;
+    }
+}

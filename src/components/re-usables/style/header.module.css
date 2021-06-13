@@ -1,0 +1,39 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+}
+.header_details {
+    display: flex;
+    align-items: center;
+    flex: 1 1;
+}
+.header_details_title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+.header_details_title > a {
+    font-weight: 700;
+    font-size: 12px;
+    width: fit-content;
+    text-decoration: none;
+    font-family: 'Roboto';
+    cursor: pointer;
+    margin: 0;
+    text-transform: capitalize;
+    padding: 0;
+    padding-bottom: 5px;
+}
+.header_details_title > h4 {
+    font-weight: 500;
+    font-size: 10.5px;
+    color: rgb(148, 148, 148);
+    text-transform: lowercase;
+    font-family: 'Roboto';
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+}

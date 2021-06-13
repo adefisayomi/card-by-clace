@@ -1,0 +1,23 @@
+.comments{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.comments > header {
+    width: fit-content;
+    padding-bottom: 10px;
+}
+.comments > header > a{
+    cursor: pointer;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(116, 116, 116);
+}
+.comments_body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 380px;
+}

@@ -1,0 +1,9 @@
+.checkout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.checkout_shipping_form {
+    width: 100%;
+}

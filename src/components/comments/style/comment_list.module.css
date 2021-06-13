@@ -1,0 +1,59 @@
+.comment_list{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+.comment_list_image{
+    margin-right: 10px;
+}
+.comment_list_header{
+    display: flex;
+    align-items: baseline;
+}
+.comment_list_header > h4 {
+    font-family: 'Roboto';
+    font-weight: 500;
+    text-transform: lowercase;
+    font-size: 12px;
+    cursor: default;
+    margin: 0;
+    margin-right: 10px;
+}
+.comment_list_header > em {
+    font-family: 'Roboto';
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 9.5px;
+    cursor: default;
+    color: teal;
+    margin: 0;
+}
+.comment_list_message{
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+}
+.comment_list_message > p {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 11.5px;
+    color: grey;
+    margin: 0;
+}
+.comment_list_action{
+    display: flex;
+    align-items: center;
+}
+.comment_list_action > a {
+    font-family: 'Roboto mono';
+    font-weight: 500;
+    text-transform: lowercase;
+    margin-right: 10px;
+    font-size: 11px;
+    color: var(--bColor);
+    cursor: pointer;
+}
+.comment_list_action > a:hover {
+    text-decoration: underline;
+}

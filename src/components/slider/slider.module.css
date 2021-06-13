@@ -1,0 +1,142 @@
+/* /* .navigation-container {
+  position: relative;
+  min-height: inherit;
+  width: 100%;
+  height: inherit;
+  display: flex;
+} */
+/* .navigation-wrapper {
+  position: relative;
+  min-height: inherit;
+  width: 100%;
+  height: inherit;
+}
+.slider {
+  width: 100%;
+  min-height: inherit;
+  height: inherit;
+}
+.slider_placeholder {
+  width: 100%;
+  min-height: 300px;
+  height: 100%;
+}
+.slides{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 320px;
+  width: 100%;
+  background-image: url('https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.slides > img {
+  width: 100%;
+  object-fit: cover;
+}
+  .dots {
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .dot {
+    border: none;
+    width: 4px;
+    height: 4px;
+    background: #d4d4d4;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 3px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .dot:focus {
+    outline: none;
+  }
+  
+  .dot.active {
+    background: #000;
+  } */ 
+
+  .slider_container {
+    border-radius: 0;
+    width: 100%;
+    height: inherit;
+    min-height: inherit;
+    max-height: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .slider {
+    width: 100%;
+    height: inherit;
+    min-height: inherit;
+    max-height: inherit;
+  }
+  .slides {
+    display: flex;
+    justify-content: center;
+    background-image: url('https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 320px;
+    position: relative;
+  }
+  .slides img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .dots {
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .dot {
+    border: none;
+    width: 4px;
+    height: 4px;
+    background: #d4d4d4;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 3px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .dot:focus {
+    outline: none;
+  }
+  
+  .dot_active {
+    background: #000;
+    border: none;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 3px;
+    outline: none;
+    cursor: pointer;
+  }
+  .slider_placeholder {
+    min-height: 350px;
+    height: inherit;
+    max-height: inherit;
+    width: 100%;
+  }

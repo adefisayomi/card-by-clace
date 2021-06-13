@@ -1,0 +1,33 @@
+.cart_list{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 450px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 0.5px solid rgb(82, 82, 82);
+}
+.cart_list_image{
+    display: flex;
+    width: 100%;
+    max-width: 120px;
+    margin-right: 10px;
+    height: 110px;
+}
+.cart_list_options{
+    display: flex;
+    height: 100%;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: baseline;
+    flex: 1 1;
+}
+.cart_list_delete{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 600px) {
+
+}

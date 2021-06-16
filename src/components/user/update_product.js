@@ -13,7 +13,9 @@ import useSWR from "swr"
 export default function UpdateProduct () {
     
     const router = useRouter()
-    const {data: product} = useSWR(() => router.query.product ? `/products/${router.query.user}/${router.query.product}` : '', {revalidateOnFocus: true})
+    const {data: product} = useSWR(() => (
+        router.query && router.query.product && router.query.user ? `/products/${router.query.user}/${router.query.product}` : ''
+    ), {revalidateOnFocus: true, initialData: null})
     const {productAction, setAlert, UI, user} = GlobalState()
     const [form, setForm] = useState({...product.details})
     const [loading, setLoading] = useState(false)

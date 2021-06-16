@@ -27,5 +27,5 @@
     outline: none;
     color: inherit;
     font-size: 12px;
-    max-width: calc(100%/3);
+    max-width: 200px;
 }

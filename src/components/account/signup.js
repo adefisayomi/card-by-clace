@@ -29,7 +29,7 @@ export default function signup () {
     }
 
     return(
-        <CardLayout>
+        <CardLayout  header= 'Card by clace' redirect= {user}>
             <div className= {styles.signup} style= {{ color: UI.color }}>
                 <div className= {styles.signup_container}>
                     <div className= {styles.signup_options}>

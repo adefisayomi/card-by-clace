@@ -10,14 +10,14 @@
     flex-direction: column;
     width: 100%;
 }
-.options_dropdown > span > label {
+.options > span > label {
     font-weight: 500;
-    font-size: 12px;
+    font-size: 12.5px;
     font-family: 'Roboto';
     margin: 0;
     padding: 0;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 #options_dropdown {
     font-family: 'Roboto mono';
@@ -27,4 +27,5 @@
     outline: none;
     color: inherit;
     font-size: 12px;
+    max-width: calc(100%/3);
 }

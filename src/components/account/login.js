@@ -29,13 +29,9 @@ export default function login () {
         await userAction.doLogin({form, setAlert})
         return setLoading(false)
     }
-    // 
-    useEffect(() => {
-        user && !user.guest ? router.back() : ''
-    }, [user])
-
+   
     return(
-        <CardLayout>
+        <CardLayout header= 'Card by clace' redirect= {user}>
             <div className= {styles.login}>
                  <div className= {styles.login_container}>
                     <div className= {styles.login_options}>

@@ -8,6 +8,9 @@ import DropDown from '../re-usables/dropdown'
 import ProfileTab from '../re-usables/profileTab'
 import OrderSummary from '../checkout/order_summary'
 import { useEffect, useState } from 'react'
+import IconButton from '@material-ui/core/IconButton';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness5Icon from '@material-ui/icons/Brightness5';
 import Logo from './logoTab'
 import {useRouter} from 'next/router'
 
@@ -47,6 +50,27 @@ export default function Nav () {
                 onClick= {user && !user.guest ? () => userAction.logOut() : () => router.push('/login')}
                 />
             </span>
+            <span><ToggleTheme /></span>
+        </div>
+    )
+}
+
+
+const ToggleTheme = () => {
+
+    const {toggleUI, UI} = GlobalState()
+
+
+    return (
+        <div style= {{ width: 'fit-content' }}>
+            
+            <IconButton onClick= {toggleUI} aria-label="cart" style= {{ color: 'black' }} color= 'inherit' disableElevation >
+                {
+                    UI.dark ? 
+                    <Brightness4Icon style= {{ fontSize: '16px' }} /> :
+                    <Brightness5Icon style= {{ fontSize: '16px' }} />
+                }
+            </IconButton>
         </div>
     )
 }

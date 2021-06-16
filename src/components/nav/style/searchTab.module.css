@@ -24,3 +24,20 @@
     background-color: white;
     transform: translateY(-50%);
 }
+
+@media screen and (max-width : 450px) {
+  .search_tab > input {
+    flex: 0 0 ;
+    font-size: 12px;
+    color: black;
+    padding: 10px;
+    position: relative;
+    background: none;
+} 
+.search_tab_icon {
+    display: none;
+}
+.search_tab{
+    width: fit-content;
+}
+}

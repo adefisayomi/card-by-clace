@@ -8,30 +8,48 @@
 }
 .subheader{
     font-size: 11px;
+    color: grey;
     font-family: 'Roboto';
-    text-transform: capitalize;
+    text-transform: lowercase;
     margin: 0;
     padding: 0;
 }
-    .profile_tab_image{
-        display: flex;
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        border: 2px solid rgb(224, 224, 224);
-        padding: 2px;
-        margin-right: 7px;
-    }
-    .profile_tab_image img {
-        border-radius: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-    .profile_tab_text{
-        font-family: 'Roboto';
-        font-size: 15px;
-        margin: 0;
-        font-weight: 900;
-        text-transform: uppercase;
-        padding: 0;
-    }
+.profile_tab_image{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid rgb(224, 224, 224);
+    padding: 2px;
+    margin-right: 7px;
+}
+ .table_image {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 40px;
+     height: 40px;
+     border-radius: 100%;
+     border: 2px solid grey;
+     padding: 2px;
+     margin-right: 7px;
+ }   
+.table_image > h1{
+    font-family: 'Roboto';
+    font-size: 15px;
+    margin: 0;
+    font-weight: 900;
+    color: inherit;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+/* Table body */
+#table_body_cell {
+    padding: 10px;
+    font-family: 'Roboto';
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 500;
+    color: inherit;
+}

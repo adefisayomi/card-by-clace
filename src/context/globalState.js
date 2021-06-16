@@ -1,6 +1,6 @@
 import { useContext, createContext, useState, useCallback, useReducer} from "react";
 import useSWR from "swr";
-import {themeObject, themeReducer} from './reducers/theme'
+import {themeObject, themeReducer} from './reducers/themeAction'
 import {userAction} from './reducers/userAction'
 import {cartReducer} from './reducers/cartAction'
 import {commentAction} from './reducers/commentAction'
@@ -12,31 +12,29 @@ const StateContext = createContext()
 
 export default function GlobalStateProvider ({children}) {
 
-    // theme
-    const [theme, dispatchTheme] = useReducer(themeReducer, themeObject)
-    const UI = theme.isDark ? theme.dark : theme.light
-    const toggleUI = useCallback(() => dispatchTheme({type: 'TOGGLE_UI'}))
-    //
+   // theme
+   const [theme, dispatchTheme] = useReducer(themeReducer, themeObject)
+   const UI = theme.isDark ? theme.dark : theme.light
+   const toggleUI = useCallback(() => dispatchTheme({type: 'TOGGLE_UI'}))
+
+    //  ----set ALert -------
     const [alert, setAlert] = useState({message: '', type: ''})
 
     const [trigger, setTrigger] = useState(false)   //enforces user login || signup
 
-    //
+    // -------- get USER -----
     const {data: user} = useSWR('/user', {initialData: null, revalidateOnFocus: true})
     
-    // cart
+    // -------- get cart -------
     const [cart, cartAction] = useReducer(cartReducer, [], () => {
             let cartRef = typeof window !== 'undefined' && JSON.parse(window.localStorage.getItem('card_cart'))
             return cartRef ? cartRef : []
     })
-
-console.log(cart)
     
-    const {data: products} = useSWR(() => user && !user.guest ? `/products/${user._id}` : '' , {revalidateOnFocus: true, initialData: []})
-    console.log('Globals State: -- ', user)
+    const {data: products} = useSWR(() => user ? `/products/${user._id}` : '' , {revalidateOnFocus: true, initialData: []})
     
     return(
-        <StateContext.Provider value= {{UI, toggleUI, user, alert, setAlert, cart, userAction,commentAction, checkoutAction, cartAction, productAction, trigger, setTrigger}}>
+        <StateContext.Provider value= {{UI, toggleUI, user, alert, setAlert, cart, userAction, commentAction, checkoutAction, cartAction, productAction, trigger, setTrigger}}>
             {children}
         </StateContext.Provider>
     )

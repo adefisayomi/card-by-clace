@@ -7,6 +7,15 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
+.footer > span {
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+}
+.footer > span > a {
+    cursor: pointer;
+    font-weight: 500;
+}
 #footer_button {
     background: none;
     border: 2px solid grey;

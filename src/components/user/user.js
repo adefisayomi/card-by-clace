@@ -32,7 +32,7 @@ export default function User () {
 
 
     return(
-        <CardLayout>
+        <CardLayout >
             {
                 currentUser && currenUserProducts ?
                 <div className= {styles.user}>

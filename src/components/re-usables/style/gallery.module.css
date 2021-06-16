@@ -36,9 +36,17 @@
     background-color: rgba(0, 0, 0, 0.24);
     width: 100%;
     transition: 0.4s;
-    padding: 5px; 
+    padding: 5px;
 }
 .gallery_div:hover .gallery_span_overlay {
     display: flex;
     transition: 0.4s;
+}
+@media screen and (max-width: 450px) {
+    .gellery_span {
+        height: 165px;
+    }
+    .gallery_span_overlay > span {
+        padding: 3px;
+    }
 }

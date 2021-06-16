@@ -1,12 +1,14 @@
 import styles from './style/cardLayout.module.css'
 import {GlobalState} from '../../context/globalState'
 import router from 'next/router'
+import {Icon} from 'semantic-ui-react'
 import { useEffect } from 'react'
 
 
-export default function CardLayout ({children, redirect}) {
+export default function CardLayout ({children, redirect, header}) {
 
     const {UI} = GlobalState()
+    
     useEffect(() => {
         if (redirect) {
             router.back()
@@ -19,6 +21,16 @@ export default function CardLayout ({children, redirect}) {
 
     return (
         <div className= {styles.layout} style= {{ backgroundColor: UI.bgColor }}>
+            {
+                header && 
+                <header style= {{ borderBottom: UI.border }}>
+                    <h1>{header}</h1>
+                    <span className= {styles.product_cancel}>
+                        <Icon name= 'cancel' link bordered onClick= {() => router.back()} />
+                    </span>
+                </header>
+            }
+            
             {children}
         </div>
     )

@@ -2,15 +2,16 @@
 export const themeObject = {
     isDark: true,
     dark: {
-        body: 'rgb(9,12,16)',
+        body: 'rgb(22,27,34)',
         bgColor: 'rgb(9,12,16)',
-        // bgColor: 'rgb(22,27,34)',
         color: 'rgb(201,209,204)',
+        // color: 'rgb(70, 69, 69)',
         border: '0.5px solid rgb(54, 54, 54)',
         dark: true
     },
     light: {
-        body: '#fafafa',
+        // body: '#fafafa',
+        body: 'rgb(22,27,34)',
         bgColor: 'white',
         color: 'rgb(70, 69, 69)',
         dark: false,
@@ -19,10 +20,13 @@ export const themeObject = {
     
 }
 
+
 export function themeReducer (state, action) {
 
     if(action.type === 'TOGGLE_UI') {
-        return { ...state, isDark: !state.isDark }
+        state = {  ...state, isDark: !state.isDark }
+        window.localStorage.setItem('card_theme', JSON.stringify(state))
+        return state
     }
     else {
         return state

@@ -31,14 +31,9 @@ export default function productCard () {
 
 
     return (
-        <CardLayout>
+        <CardLayout header= {product?.details?.title || ''}>
             <div className= {styles.product}>
-                <header style= {{ borderBottom: UI.border }}>
-                    <h1>{product?.details?.title || ''}</h1>
-                    <span className= {styles.product_cancel}>
-                        <Icon name= 'cancel' link bordered onClick= {() => router.back()} />
-                    </span>
-                </header>
+                
                 <span className= {styles.product_images}>
                     <Slider images= {product?.details?.images} />
                 </span>

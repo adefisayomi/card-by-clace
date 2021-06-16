@@ -31,41 +31,45 @@ export default ({form, setForm, product}) => {
                         value= {form.quantity || ''}
                     />
                 </span>
+                {
+                    size && size.length > 0 &&
+                    <span style= {{ margin: '0 5px' }}>
+                        <label htmlFor="size">size</label>
+                        <Dropdown 
+                            id= {styles.options_dropdown} 
+                            onChange= {getSize || ''}
+                            fluid 
+                            labeled 
+                            name= 'size'
+                            placeholder= 'size...'
+                            clearable
+                            value= {form?.options?.size || ''}
+                            options={size}
+                            selection
+                            style= {{ border: UI.border }}
+                        />
+                    </span>
+                }
 
-                <span style= {{ margin: '0 5px' }}>
-                    <label htmlFor="size">size</label>
-                    <Dropdown 
-                        id= {styles.options_dropdown} 
-                        onChange= {getSize || ''}
-                        fluid 
-                        labeled 
-                        name= 'size'
-                        placeholder= 'size...'
-                        clearable
-                        value= {form?.options?.size || ''}
-                        options={size}
-                        selection
-                        style= {{ border: UI.border }}
-                    />
-                </span>
-
-                <span>
-                    <label htmlFor="color">color</label>
-                    <Dropdown 
-                        id= {styles.options_dropdown} 
-                        onChange= {getColor || ''}
-                        fluid 
-                        labeled 
-                        name= 'color'
-                        placeholder= 'color...'
-                        clearable
-                        value= {form?.options?.color || ''}
-                        options={color}
-                        selection
-                        style= {{ border: UI.border }}
-                    />
-                </span>
-             
+                {
+                    color && color.length > 0 && 
+                   <span>
+                        <label htmlFor="color">color</label>
+                        <Dropdown 
+                            id= {styles.options_dropdown} 
+                            onChange= {getColor || ''}
+                            fluid 
+                            labeled 
+                            name= 'color'
+                            placeholder= 'color...'
+                            clearable
+                            value= {form?.options?.color || ''}
+                            options={color}
+                            selection
+                            style= {{ border: UI.border }}
+                        />
+                    </span> 
+                }
         </div>
     )
 }

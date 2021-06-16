@@ -1,0 +1,9 @@
+.inventory {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 0 10px 20px 10px;
+}
+.inventory > span {
+    width: 100%;
+}

@@ -5,22 +5,7 @@
     width: 100%;
     font-family: 'Roboto';
 }
-.create > header {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px 10px 20px;
-    margin-bottom: 10px;
-}
-.create > header > h1 {
-    margin: 0;
-    padding: 0;
-    font-weight: 900;
-    font-family: 'Roboto';
-    font-size: 16px;
-    text-transform: capitalize;
-}
+
 .create_images {
     width: 100%;
 }

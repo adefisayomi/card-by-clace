@@ -51,14 +51,8 @@ export default function CreateProduct () {
     }
 
     return(
-        <CardLayout >
+        <CardLayout header= 'Create product.' redirect= {!user} >
             <div className= {styles.create} id= {styles.create}>
-                <header>
-                <h1>Create product.</h1>
-                    <span className= {styles.product_cancel}>
-                        <Icon name= 'cancel' link bordered onClick= {() => router.back()} />
-                    </span>
-                </header>
                 <span className= {styles.create_images}>
                     <UploadImage onChange= {getImages} onDelete= {deleteImage} images= {form?.images} />
                 </span>

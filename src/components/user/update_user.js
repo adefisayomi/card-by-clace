@@ -13,17 +13,8 @@ export default function update () {
 
     const router = useRouter()
     const {UI, setAlert, userAction, user} = GlobalState()
-    const [form, setForm] = useState({...user})
+    const [form, setForm] = useState({...user, name: `${user?.first_name || ''} ${user?.last_name || ''}`})
     const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
-    // -----------
-    useEffect(() => {
-        if (user) {
-            setForm({...user, name: `${user.first_name || ''} ${user.last_name || ''}`})
-        }
-        else {
-            router.back()
-        }
-    }, [user, router.asPath])
     // -----------
     const [loading, setLoading] = useState(false)
     const getImage = async (e) => {  //Get image
@@ -54,7 +45,7 @@ export default function update () {
 
 
     return(
-        <CardLayout >
+        <CardLayout redirect= {!user} >
                 <div className= {styles.profile} id = {styles.profile} style= {{ color: UI.color }}>
                     <header style= {{ borderBottom: UI.border }}>
                     <UploadProfilePicture 

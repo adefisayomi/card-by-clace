@@ -28,7 +28,7 @@ export default function GlobalStateProvider ({children}) {
     // -------- get cart -------
     const [cart, cartAction] = useReducer(cartReducer, [], () => {
             let cartRef = typeof window !== 'undefined' && JSON.parse(window.localStorage.getItem('card_cart'))
-            return cartRef ? cartRef : []
+            return  user && cartRef ? cartRef : []
     })
     
     const {data: products} = useSWR(() => user ? `/products/${user._id}` : '' , {revalidateOnFocus: true, initialData: []})

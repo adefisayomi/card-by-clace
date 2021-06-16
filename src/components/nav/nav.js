@@ -40,7 +40,7 @@ export default function Nav () {
                     </DropDown>
                 </span>
             </div>
-            { open && <span style= {{ padding: '0 10px' }}><OrderSummary /></span> }
+            { open && user && <span style= {{ padding: '0 10px' }}><OrderSummary /></span> }
             { !open && <span className= {styles.nav_search}><SearchTab /></span>}
             { !open && user && !user.guest && <span className= {styles.nav_user}> <ProfileTab user= {user} /> </span>}
             <span>

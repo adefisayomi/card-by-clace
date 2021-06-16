@@ -11,7 +11,7 @@ import { GlobalState } from '../../context/globalState';
 export default function checkout () {
 
   const router = useRouter()
-  const {cart, setAlert, checkoutAction} = GlobalState()
+  const {cart, setAlert, checkoutAction, user} = GlobalState()
   const [form, setForm] = useState({})
   const [loading, setLoading] = useState(false)
   const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
@@ -40,7 +40,7 @@ export default function checkout () {
   }, [cart])
 
   return (
-        <CardLayout>
+        <CardLayout redirect= { !user || !cart || !cart.length > 0 }>
           <div className= {styles.checkout}>
             <span className= {styles.checkout_shipping_form}>
               <ShippingForm form= {form} getForm= {getForm} handleSubmit= {handleSubmit} loading= {loading} getOption= {getOption} />

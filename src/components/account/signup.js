@@ -11,7 +11,7 @@ import Footer from '../nav/footer'
 
 export default function signup () {
 
-    const {userAction,  UI, setAlert} = GlobalState()
+    const {userAction,  UI, setAlert,user} = GlobalState()
     const [form, setForm] = useState({})
     const [showPass, setShowPass] = useState(false)
     const togglePass = () => setShowPass(!showPass)

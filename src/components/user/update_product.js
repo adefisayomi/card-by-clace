@@ -7,15 +7,11 @@ import styles from './style/add_product.module.css'
 import { GetMultipleImage } from "../../utils/actions/getImage"
 import { useRouter } from "next/router"
 import {businessCategory} from '../../utils/static_files/menu'
-import useSWR from "swr"
 
 
-export default function UpdateProduct () {
+export default function UpdateProduct ({product}) {
     
     const router = useRouter()
-    const {data: product} = useSWR(() => (
-        router.query && router.query.product && router.query.user ? `/products/${router.query.user}/${router.query.product}` : ''
-    ), {revalidateOnFocus: true, initialData: null})
     const {productAction, setAlert, UI, user} = GlobalState()
     const [form, setForm] = useState({...product.details})
     const [loading, setLoading] = useState(false)
@@ -63,7 +59,7 @@ export default function UpdateProduct () {
 
 
     return(
-        <CardLayout redirect= {user?._id !== product?.author?._id} header= 'Update product.' >
+        <CardLayout redirect= {user?._id !== product.author?._id} header= 'Update product.' >
             <div className= {styles.create} id= {styles.create}>
 
                 <span className= {styles.create_images}>

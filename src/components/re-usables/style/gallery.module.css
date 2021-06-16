@@ -43,10 +43,16 @@
     transition: 0.4s;
 }
 @media screen and (max-width: 450px) {
+    .gallery{
+        padding: 2.5px 0;
+    }
     .gellery_span {
         height: 165px;
     }
     .gallery_span_overlay > span {
         padding: 3px;
+    }
+    .gallery_div {
+        padding: 2px;
     }
 }

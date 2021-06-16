@@ -12,7 +12,7 @@ import {businessCategory} from '../../utils/static_files/menu'
 export default function CreateProduct () {
 
     const router = useRouter()
-    const {productAction, setAlert, UI} = GlobalState()
+    const {productAction, setAlert, UI, user} = GlobalState()
     const [form, setForm] = useState({images: [], options: {}})
     const [loading, setLoading] = useState(false)
     const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})

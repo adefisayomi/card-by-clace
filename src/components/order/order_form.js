@@ -10,11 +10,17 @@ export default function orderForm ({product}) {
   const {cart, cartAction, setAlert, UI} = GlobalState()
   const [form, setForm] = useState({quantity: 1, options: {}})
   const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
-  const getOptions = (e, {value}) => setForm({...form, options: { ...form?.options, [e.target.name]: value} })
 
-  const handleAddToCart = async (e) => {
+  const handleAddToCart = (e) => {
       e.preventDefault()
-      await cartAction.addToCart({cart, form, setAlert, product})
+      cartAction({type: 'ADD_TO_CART', payload: {
+        quantity: form.quantity,
+        date:  new Date() ,
+        options: form.options,
+        note: form.note,
+        price: parseInt(form.quantity) * parseInt(product.details.price),
+        _id: product._id
+      }})
   }
 
 
@@ -28,15 +34,15 @@ export default function orderForm ({product}) {
                 <p className= {styles.order_form_description}>{product?.details?.description} </p>
 
                 <div className= {styles.order_form_options}>
-                    <OrderOptions getOptions= {getOptions} onChange= {getForm} form= {form} />
+                    <OrderOptions setForm= {setForm} form= {form} product= {product} />
                 </div>
 
                 <TextArea 
                     placeholder= 'Add note...'
                     name= 'note'
-                    value= {form?.options?.note || ''}
+                    value= {form?.note || ''}
                     id= {styles.order_form_textarea}
-                    onChange= {getOptions}
+                    onChange= {getForm}
                     style= {{ border: UI.border }}
                 />
                 <Button

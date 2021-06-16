@@ -1,0 +1,30 @@
+.createAccount {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+}
+.createAccount > p {
+    display: flex;
+    font-size: 13px;
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+.createAccount > p a {
+    margin: 0 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.createAccount > span {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    max-width: 350px;
+}

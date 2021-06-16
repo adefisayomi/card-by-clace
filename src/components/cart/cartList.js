@@ -4,20 +4,39 @@ import useSWR from 'swr'
 import Slider from '../slider/slider'
 import { Icon, Placeholder } from 'semantic-ui-react'
 import OrderOptions from '../order/order_options'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 export default function CartList ({props}) {
 
-    const {setAlert, cartAction, cart} = GlobalState()
+    const {cartAction} = GlobalState()
     const {data: product} = useSWR(() => props ? `/products/query/${props._id}` : '', {revalidateOnFocus: true})
-    const [form, setForm] = useState({})
-    const getForm = (e) => setForm({...form, [e.target.name ]: e.target.value})
+    const [form, setForm] = useState({quantity: props.quantity || '', options: props.options || {}})
+    const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
 
-    const handleDelete = async () => {
-        await cartAction.removeFromCart({setAlert, product, cart})
+    const handleDelete =  () => {
+        if(product) {
+            cartAction({type: 'REMOVE_FROM_CART', payload: {
+            _id: product._id
+            }})
+        }
     }
 
+    useEffect(() => {
+        const updateCart = () => {
+            if (product) {
+                cartAction({type: 'UPDATE_CART', payload: {
+                quantity: form.quantity,
+                note: form.note,
+                date:  new Date() ,
+                options: form.options,
+                price: parseInt(form.quantity) * parseInt(product.details?.price),
+                _id: product._id
+            }})
+            }
+        }
+        updateCart()
+    }, [form])
     
 
     return (
@@ -29,7 +48,7 @@ export default function CartList ({props}) {
                     <Slider dots= {false} images= {product?.details?.images} />
                 </span>
                 <span className= {styles.cart_list_options}>
-                    <OrderOptions form= {form} getForm= {getForm} availableQuantity= {product?.details?.quantity} />
+                    <OrderOptions product= {product}  form= {form} setForm= {setForm} />
                 </span>
                 <span className= {styles.cart_list_delete}>
                     <Icon

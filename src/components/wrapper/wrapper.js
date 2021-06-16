@@ -7,11 +7,12 @@ import axios from 'axios'
 import Nav from '../nav/nav'
 import { useEffect, useState } from 'react'
 import {useRouter} from 'next/router'
+import CreateAccount from '../trigger/createAccount'
 
 export default function wrapper ({children}) {
 
     const router = useRouter()
-    const {UI, user} = GlobalState()
+    const {UI, user, setTrigger, trigger} = GlobalState()
     const [open, setOpen] = useState(true)
     const title = router.asPath.split('/').pop().replace('/', '|').replace('[', '').replace(']', '')
     const forbidenPath = ['login', 'signup']
@@ -21,6 +22,20 @@ export default function wrapper ({children}) {
     axios.defaults.baseURL = process.env.NODE_ENV == 'development' ? 'http://localhost:5000/api' : 'https://rango.devbyclace.com/api'
     axios.defaults.headers['Content-Type'] = 'application/json'
     axios.defaults.withCredentials = true
+    const source = axios.CancelToken.source();
+    const cancelToken = source.token
+    axios.defaults.cancelToken = cancelToken
+
+    
+
+    // axios.interceptors.request.use(req => {
+    //     if (!user && req && req.method !== 'get') {
+    //         setTrigger(true)
+    //         source.cancel('you need to login to continue.')
+    //     }
+    //     return req
+    // }, err => Promise.reject(err))
+
 
     
     
@@ -35,6 +50,7 @@ export default function wrapper ({children}) {
         <div className= {styles.wrapper} style= {{ backgroundColor: UI.dark ? 'rgb(22,27,34)' : 'rgb(9,12,16)', color: UI.color }}>
             <Header title= {title} />
             <Alert />
+            {trigger && !user && <CreateAccount />}
             { open && <header> <Nav /> </header>}
             <main style= {{ minHeight: !open && '100vh' }}>{children}</main>
             { open && <footer><Footer /></footer>}

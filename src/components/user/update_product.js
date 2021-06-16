@@ -1,7 +1,7 @@
 import CardLayout from "../re-usables/cardLayout"
 import { GlobalState } from "../../context/globalState"
 import UploadImage from '../re-usables/upload_image'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Form, Button, Dropdown, Icon, Checkbox} from 'semantic-ui-react'
 import styles from './style/add_product.module.css'
 import { GetMultipleImage } from "../../utils/actions/getImage"
@@ -10,7 +10,7 @@ import {businessCategory} from '../../utils/static_files/menu'
 
 
 export default function UpdateProduct ({product}) {
-
+    
     const router = useRouter()
     const {productAction, setAlert, UI, user} = GlobalState()
     const [form, setForm] = useState({...product.details})
@@ -20,14 +20,14 @@ export default function UpdateProduct ({product}) {
     const getOptions = (e) => setForm({...form, options: {...form.options, [e.target.name]: (e.target.value).split(',') }})
 
     // -----------------------------------------------------------
-    const [showOption, setShowOptions] = useState({size: false, color: false})
+    const [showOption, setShowOptions] = useState({size: true, color: true})
     const toggleSize = () => {
         setShowOptions({...showOption, size: !showOption.size})
-        setForm({...form, options: {...form.options, size: []}})
+        // setForm({...form, options: {...form.options, size: []}})
     }
     const toggleColor = () => {
         setShowOptions({...showOption, color: !showOption.color})
-        setForm({...form, options: {...form.options, color: []}})
+        // setForm({...form, options: {...form.options, color: []}})
     }
     // ------------------------------------------------------------
 
@@ -54,12 +54,12 @@ export default function UpdateProduct ({product}) {
         setDeleting(true)
 
         await productAction.deleteProduct({product, user,setAlert})
-        setDeleting(false)
         router.back()
     }
 
+
     return(
-        <CardLayout >
+        <CardLayout redirect= {user?._id !== product.author?._id} >
             <div className= {styles.create} id= {styles.create}>
                 <header>
                 <h1>Create product.</h1>

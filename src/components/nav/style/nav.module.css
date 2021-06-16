@@ -28,7 +28,7 @@
     transition: 0.4s;
 }
 .nav_search {
-    min-width: 200px;
+    min-width: 220px;
     transform: translateX(120%);
     transition: 0.5s;
     padding: 0 10px;
@@ -46,12 +46,12 @@
         padding: 2px 5px;
     }
     .nav_home > span {
-        margin-right: 7px;
+        margin-right: 5px;
     }
     .nav_search {
-        min-width: 150px;
+        min-width: 120px;
     }
     .nav_user {
-        margin-right: 7px;
+        margin-right: 5px;
     }
 }

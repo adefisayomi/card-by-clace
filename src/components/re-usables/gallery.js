@@ -28,7 +28,7 @@ export default function gallery ({products, onClick}) {
                                         ₦{product?.details?.price || ''}
                                     </Label>
                                     {
-                                        product.author._id === user._id &&
+                                        product.author?._id === user?._id &&
                                         <IconButton aria-label="settings" onClick= {() => router.push(`${router.asPath}/${product._id}/update`)}>
                                             <EditIcon style= {{ color: 'rgb(29, 162, 250)', fontSize: '15px'}}  />
                                         </IconButton>

@@ -12,7 +12,7 @@ export default function SearchTab ({onBlur, onFocus, id}) {
     return (
        <div className= {styles.search_tab}>
            <input onFocus= {onFocus} onBlur= {onBlur} id= {id} ref= {inputRef} type="text" placeholder= 'search...' />
-           <span className= {styles.search_tab_icon}><Icon name= 'search' color= 'grey' link onClick= {() => inputRef.current.focus()} /></span> 
+           <span className= {styles.search_tab_icon}><Icon name= 'search' color= 'grey' link onClick= {() => inputRef.current.focus()} /></span>
        </div>
     ) 
 }

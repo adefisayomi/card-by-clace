@@ -22,7 +22,7 @@ export default function CardTab () {
   return (
       <div>
           <IconButton aria-label="cart" style= {{ color: 'white' }} color= 'inherit' disableElevation >
-            <StyledBadge badgeContent={ user && cart?.length > 0 ? cart?.length : '0' } >
+            <StyledBadge badgeContent={ cart?.length || '0' } >
                 <ShoppingCartIcon style= {{ fontSize: '16px' }} />
             </StyledBadge>
           </IconButton>

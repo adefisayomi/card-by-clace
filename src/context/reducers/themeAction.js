@@ -1,6 +1,6 @@
 
 export const themeObject = {
-    isDark: true,
+    isDark: false,
     dark: {
         body: 'rgb(22,27,34)',
         bgColor: 'rgb(9,12,16)',
@@ -10,8 +10,8 @@ export const themeObject = {
         dark: true
     },
     light: {
-        // body: '#fafafa',
-        body: 'rgb(22,27,34)',
+        body: '#fafafa',
+        // body: 'rgb(22,27,34)',
         bgColor: 'white',
         color: 'rgb(70, 69, 69)',
         dark: false,

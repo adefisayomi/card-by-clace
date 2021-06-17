@@ -29,7 +29,7 @@ export default function checkout () {
 
   // monitor cart length
   useEffect(() => {
-    if ( !cart || !cart.length > 0) {
+    if ( !cart || cart.length === 0) {
       setAlert({message: 'Your cart is empty.', type: 'error'})
       router.back()
     }
@@ -40,7 +40,7 @@ export default function checkout () {
   }, [cart])
 
   return (
-        <CardLayout redirect= { !cart || !cart.length > 0 }>
+        <CardLayout redirect= { !cart || cart.length === 0 }>
           <div className= {styles.checkout}>
             <span className= {styles.checkout_shipping_form}>
               <ShippingForm form= {form} getForm= {getForm} handleSubmit= {handleSubmit} loading= {loading} getOption= {getOption} />

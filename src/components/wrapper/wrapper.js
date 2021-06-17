@@ -53,7 +53,7 @@ export default function wrapper ({children}) {
 
 
     return ( 
-        <div className= {styles.wrapper} style= {{ backgroundColor: UI.dark ? 'rgb(22,27,34)' : 'rgb(9,12,16)', color: UI.color }}>
+        <div className= {styles.wrapper} style= {{ backgroundColor: UI.dark ? 'rgb(22,27,34)' : UI.body, color: UI.color }}>
             <Header title= {title} />
             <Alert />
             {trigger && !user && <CreateAccount />}

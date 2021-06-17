@@ -5,16 +5,16 @@ import { GlobalState } from '../../context/globalState'
 
 export default function LogoTab () {
 
-    const {UI, globalLoadingState} = GlobalState()
+    const {UI, globalLoading} = GlobalState()
 
     return(
         <div className= {styles.logo} >
-            {globalLoadingState ? 
-            <span className= {styles.logo_loading}>
-               <Loader active size= 'tiny' />
-            </span>
-             : 
-            <Link href= '/'><a>c</a></Link>
+            {globalLoading ? 
+                <span className= {styles.logo_loading}>
+                <Loader active size= 'tiny' />
+                </span>
+                : 
+                <Link href= '/'><a>c</a></Link>
             }
         </div>
     )

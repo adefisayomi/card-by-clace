@@ -17,7 +17,7 @@ export default function homeCard ({product}) {
                         header= {{ title: product?.details?.title, subheader: product?.details?.category }}
                         user= { author }
                         icon= {{ name: 'arrow', content: product?.details?.description }}
-                        path= {{ title: `${author?.username||author?._id}/${product?.details?.title||product?._id}` }}
+                        path= {{ title: `/${author?.username||author?._id}/${product?._id}` }}
                     />
                 </header>
                 <div className= {styles.card_images}> <Slider images= {product?.details?.images} /> </div>

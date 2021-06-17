@@ -21,6 +21,7 @@ export default function GlobalStateProvider ({children}) {
     const [alert, setAlert] = useState({message: '', type: ''})
 
     const [trigger, setTrigger] = useState(false)   //enforces user login || signup
+    const [globalLoading, setGlobalLoading] = useState(false)
 
     // -------- get USER -----
     const {data: user} = useSWR('/user', {initialData: null, revalidateOnFocus: true})
@@ -30,11 +31,11 @@ export default function GlobalStateProvider ({children}) {
             let cartRef = typeof window !== 'undefined' && JSON.parse(window.localStorage.getItem('card_cart'))
             return  user && cartRef ? cartRef : []
     })
-    
+
     const {data: products} = useSWR(() => user ? `/products/${user._id}` : '' , {revalidateOnFocus: true, initialData: []})
     
     return(
-        <StateContext.Provider value= {{UI, toggleUI, user, alert, setAlert, cart, userAction, commentAction, checkoutAction, cartAction, productAction, trigger, setTrigger}}>
+        <StateContext.Provider value= {{UI, toggleUI, user, products, alert, setAlert, cart, userAction, commentAction, checkoutAction, cartAction, productAction, trigger, setTrigger, globalLoading, setGlobalLoading}}>
             {children}
         </StateContext.Provider>
     )

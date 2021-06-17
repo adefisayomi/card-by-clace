@@ -20,10 +20,8 @@ async function doLogin ({form, setAlert}) {
         const user = await axios.get('/user', {headers: { authorization: `Bearer ${token.data.data}` }})
         if(user && !user.data.success) throw new Error(user.data.message)
         // 
-        mutate('/user')
-        const {username, first_name} = user.data.data
-        setAlert({message: `Successfuly logged in as ${username || first_name || ''}`})
-        return trigger('/user')
+        setAlert({message: `Successfuly logged in `})
+        trigger('/user')
     }
     catch(err) {
         return setAlert({message: err.message, type: 'error'})
@@ -41,10 +39,8 @@ async function doSignup ({form, setAlert}) {
         // 
         const user = await axios.get('/user', {headers: { authorization: `Bearer ${token.data.data}` }})
         if(user && !user.data.success) throw new Error(user.data.message)
-        // 
-        mutate('/user')
-        const {username, first_name} = user.data.data
-        setAlert({message: `Successfuly logged in as ${username || first_name || ''}`})
+        //
+        setAlert({message: `successfuly logged in`})
         return trigger('/user')
     }
     catch(err) {

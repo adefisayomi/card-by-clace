@@ -12,7 +12,7 @@ import CreateAccount from '../trigger/createAccount'
 export default function wrapper ({children}) {
 
     const router = useRouter()
-    const {UI, user, setTrigger, trigger} = GlobalState()
+    const {UI, user, setTrigger, trigger, globalLoading, setGlobalLoading} = GlobalState()
     const [open, setOpen] = useState(true)
     const title = router.asPath.split('/').pop().replace('/', '|').replace('[', '').replace(']', '')
     const forbidenPath = ['login', 'signup']
@@ -28,13 +28,19 @@ export default function wrapper ({children}) {
 
     
 
-    // axios.interceptors.request.use(req => {
-    //     if (!user && req && req.method !== 'get') {
-    //         setTrigger(true)
-    //         source.cancel('you need to login to continue.')
-    //     }
-    //     return req
-    // }, err => Promise.reject(err))
+    axios.interceptors.request.use(req => {
+        // if (!user && req && req.method !== 'get') {
+        //     setTrigger(true)
+        //     source.cancel('you need to login to continue.')
+        // }
+        setGlobalLoading(true)
+        return req
+    }, err => Promise.reject(err))
+
+    axios.interceptors.response.use(res => {
+        setGlobalLoading(false)
+        return res
+    }, err => Promise.reject(err))
 
 
     

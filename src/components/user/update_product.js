@@ -7,6 +7,7 @@ import styles from './style/add_product.module.css'
 import { GetMultipleImage } from "../../utils/actions/getImage"
 import { useRouter } from "next/router"
 import {businessCategory} from '../../utils/static_files/menu'
+import useSWR from "swr"
 
 
 export default function UpdateProduct ({product}) {

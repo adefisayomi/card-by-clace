@@ -68,6 +68,7 @@ export default function CreateProduct () {
                             type= 'text'
                             selection
                             search
+                            value= {form.category || ''}
                             options= {businessCategory || []}
                             onChange= {getCategory}
                             style= {{ border: UI.border }}

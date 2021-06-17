@@ -14,7 +14,7 @@ export async function getServerSideProps (ctx) {
     catch(err) {
         return {
             redirect: {
-                destination: ctx.resolvedUrl,
+                destination: `/${ctx.query.user}/${ctx.query.product}`,
                 permanent: false
             }
         }

@@ -28,11 +28,13 @@
     justify-content: center;
     align-items: center;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 450px) {
     .cart_list{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        min-width: 100%;
+        min-width: 420px;
+    }
+    .cart_list_image{
+        max-width: 120px;
+        margin-right: 8px;
+        height: 110px;
     }
 }

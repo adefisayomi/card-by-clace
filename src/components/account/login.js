@@ -6,8 +6,6 @@ import Link from 'next/link'
 import CardLayout from '../re-usables/cardLayout'
 import styles from './style/login.module.css'
 import Footer from '../nav/footer'
-import { useEffect } from "react";
-import router from "next/router";
 
 
 

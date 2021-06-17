@@ -1,7 +1,7 @@
 
 export const businessCategory = [
-  {key: 1, text: 'Fashion deisgning & Tailoring', value: 'clothing'},
-  {key: 2, text: 'Shoe Making', value: 'shoe_making'},
+  {key: 1, text: 'clothings', value: 'clothing'},
+  {key: 2, text: 'electronics', value: 'electronics'},
   {key: 3, text: 'Catering', value: 'Catering'},
   {key: 4, text: 'House cleaning', value: 'House cleaning'},
   {key: 5, text: 'Copy or content writing', value: 'Copy or content writing'},

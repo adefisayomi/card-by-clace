@@ -60,7 +60,6 @@ const ToggleTheme = () => {
 
     const {toggleUI, UI} = GlobalState()
 
-
     return (
         <div style= {{ width: 'fit-content' }}>
             

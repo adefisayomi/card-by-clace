@@ -4,6 +4,7 @@ import router from 'next/router'
 import {Icon} from 'semantic-ui-react'
 import { useEffect } from 'react'
 import Card from '@material-ui/core/Card';
+import Header from './header'
 
 
 export default function CardLayout ({children, redirect, header}) {
@@ -28,7 +29,7 @@ export default function CardLayout ({children, redirect, header}) {
                     <header style= {{ borderBottom: UI.border }}>
                         <h1>{header}</h1>
                         <span className= {styles.product_cancel}>
-                            <Icon name= 'cancel' link bordered onClick= {() => router.back()} />
+                            <Icon name= 'cancel' link onClick= {() => router.back()} />
                         </span>
                     </header>
                 }

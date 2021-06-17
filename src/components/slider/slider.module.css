@@ -68,7 +68,7 @@
     cursor: pointer;
   }
   .slider_placeholder {
-    min-height: 350px;
+    min-height: 400px;
     height: inherit;
     max-height: inherit;
     width: 100%;

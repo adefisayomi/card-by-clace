@@ -8,7 +8,7 @@ import styles from './style/header.module.css'
 import { useRouter } from 'next/router';
 
 
-export default function Header({ user,  header= {},  icon = {}, width= '45px', path= {}}) {
+export default function Header({ user,  header= {},  icon = {}, width= '40px', path= {}}) {
 
   const router = useRouter()
 
@@ -42,3 +42,26 @@ export default function Header({ user,  header= {},  icon = {}, width= '45px', p
       </div>
     )
   }
+
+  // <span className= {styles.header_image}>
+  //         <ProfileTab user= {header.user_id || ''} width= {width} />
+  //       </span>
+
+  //       <span className= {styles.header_titles}>
+  //           <a onClick= {() => router.push(link?.header || '')} >{header.header || ''}</a>
+  //           <h4>{header.subheader || ''}</h4>
+  //       </span>
+
+  //       <span className= {styles.header_icon}>
+  //         <PopUp content= {icon.content || ''} trigger= {
+  //             <IconButton onClick= {() => link.icon ? router.push(path.icon) : ''} aria-label="settings">
+  //                {icon.name == 'arrow' ? 
+  //                   <ArrowForwardIosIcon style= {{ color: 'rgb(29, 162, 250)' }} /> :
+  //                   icon.name == 'more' ? 
+  //                   <MoreVertIcon style= {{ color: 'rgb(29, 162, 250)'}}  />  :
+  //                   icon.name == 'edit' ?
+  //                   <EditIcon style= {{ color: 'rgb(29, 162, 250)'}}  />  :
+  //                  ''} 
+  //             </IconButton>
+  //         } />
+  //       </span>

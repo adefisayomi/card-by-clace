@@ -47,6 +47,7 @@ export default function orderForm ({product}) {
                 />
                 <Button
                     icon= 'cart'
+                    color= 'blue'
                     content= 'Add to cart'
                     onClick= {handleAddToCart}
                     id= {styles.order_form_button}

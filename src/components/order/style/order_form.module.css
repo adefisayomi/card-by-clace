@@ -11,19 +11,21 @@
     justify-content: center;
 }
 #order_form_button {
-    background: none;
-    border: 2px solid grey;
+    /* background: none; */
+    /* background-color: var(--bColor); */
+    /* border: 2px solid grey; */
     border-radius: 3px;
     padding: 10px;
     font-family: 'Roboto';
-    width: 100%;
-    color: inherit;
+    align-self: flex-start;
+    /* width: 100%; */
+    /* color: inherit; */
 }
-#order_form_button:hover {
+/* #order_form_button:hover {
     border: 2px solid var(--bColor);
     background-color: black;
     color: var(--bColor);
-}
+} */
 #order_form_textarea {
     resize: none;
     width: 100%;

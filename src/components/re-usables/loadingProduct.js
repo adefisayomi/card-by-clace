@@ -16,7 +16,7 @@ export default function LoadingUser ({title}) {
                         <Placeholder.Image />
                     </Placeholder>
                 </header>
-                <Placeholder fluid style={{ minHeight: '320px', height: '100%', width: '100%'}} inverted= {UI.dark}>
+                <Placeholder fluid style={{ minHeight: '350px', height: '100%', width: '100%'}} inverted= {UI.dark}>
                     <Placeholder.Image />
                 </Placeholder>
             </div>

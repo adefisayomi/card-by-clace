@@ -50,19 +50,23 @@
     margin-bottom: 15px;
 }
 #add_product_button {
-    background: none;
+    /* background: none;
     border: 2px solid grey;
     border-radius: 3px;
     padding: 10px;
     font-family: 'Roboto';
     width: 100%;
-    color: inherit;
+    color: inherit; */
+    border-radius: 3px;
+    padding: 10px;
+    font-family: 'Roboto';
+    align-self: flex-start;
 }
-#add_product_button:hover {
+/* #add_product_button:hover {
     border: 2px solid var(--bColor);
     background-color: black;
     color: var(--bColor);
-}
+} */
 #create > form input {
     font-family: 'Roboto mono';
     padding: 10px;

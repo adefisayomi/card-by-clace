@@ -32,13 +32,15 @@ export default function Nav () {
 
     return(
         <div className= {styles.nav} style= {{ transform: open && 'translateX(0%)' }}>
-            <div className= {styles.nav_home} style= {{flexDirection: cart && cart.length > 0 && 'row-reverse' }}>
-                <span><Logo /></span>
+            <div className= {styles.nav_home} style= {{flexDirection: cart && cart.length === 0 && 'row-reverse' }}>
                 <span>
                     <DropDown trigger= { <CardTab />}>
                         <Cart />
                     </DropDown>
                 </span>
+
+                <span><Logo /></span>
+                
             </div>
             { open && <span style= {{ padding: '0 10px' }}><OrderSummary /></span> }
             { !open && <span className= {styles.nav_search}><SearchTab /></span>}

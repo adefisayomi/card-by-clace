@@ -14,7 +14,7 @@ export default function UpdateProduct ({product}) {
     
     const router = useRouter()
     const {productAction, setAlert, UI, user} = GlobalState()
-    const [form, setForm] = useState({...product.details})
+    const [form, setForm] = useState({...product?.details})
     const [loading, setLoading] = useState(false)
     const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
     const getCategory = (e, {value}) => setForm({...form, category: value})
@@ -60,7 +60,7 @@ export default function UpdateProduct ({product}) {
 
 
     return(
-        <CardLayout redirect= {user?._id !== product.author?._id} header= 'Update product.' >
+        <CardLayout redirect= {user && product && user?._id !== product?.author?._id} header= 'Update product.' >
             <div className= {styles.create} id= {styles.create}>
 
                 <span className= {styles.create_images}>

@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 5px;
+    padding: 2.5px;
     margin-bottom: 10px;
 }
 .upload > label{
@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     width: calc(100%/2 - 10px);
-    height: 170px;
+    height: 230px;
     cursor: pointer;
     margin: 5px;
     background-color: var(--bColor);
@@ -24,7 +24,7 @@
 .upload_image{
     display: flex;
     width: calc(100%/2 - 10px);
-    height: 170px;
+    height: 230px;
     position: relative;
     margin: 5px 5px;
 }
@@ -51,15 +51,15 @@
     transition: 0.3s;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     .upload label{
         width: calc(100%/2 - 5px);
-        height: 130px;
+        height: 170px;
         margin: 2.5px;
     }
     .upload_image{
         width: calc(100%/2 - 5px);
-        height: 130px;
+        height: 170px;
         margin: 2.5px;
     }
 }

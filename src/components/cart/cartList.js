@@ -43,7 +43,7 @@ export default function CartList ({props}) {
         <div className= {styles.cart_list} >
             {
                 product && product._id ? 
-                <>
+                <div className= {styles.cart_list_container}>
                 <span className= {styles.cart_list_image}>
                     {/* <Slider dots= {false} images= {product?.details?.images} /> */}
                     <Image src= { product?.details?.images[0].url || '' } />
@@ -60,7 +60,7 @@ export default function CartList ({props}) {
                         onClick= {handleDelete}
                     />
                 </span>
-                </> : 
+                </div> : 
                 <Placeholder inverted>
                     <Placeholder.Header image>
                         <Placeholder.Line />

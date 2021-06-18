@@ -3,7 +3,6 @@ import useSWR from 'swr'
 import DisplayProduct from '../user/displayProduct'
 import { GlobalState } from '../../context/globalState'
 import LoadingProduct from '../re-usables/loadingProduct'
-import Slider from '../slider/slider'
 
 
 export default function home () {

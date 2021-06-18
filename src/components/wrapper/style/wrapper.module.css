@@ -42,7 +42,7 @@
     min-height: calc(100vh - 100px);
 }
 @media screen and (max-width: 600px) {
-    .wrapper > header {
+    /* .wrapper > header {
         background: none;
-    }
+    } */
 }

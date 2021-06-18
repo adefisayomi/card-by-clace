@@ -4,7 +4,6 @@ import router from 'next/router'
 import {Icon} from 'semantic-ui-react'
 import { useEffect } from 'react'
 import Card from '@material-ui/core/Card';
-import Header from './header'
 
 
 export default function CardLayout ({children, redirect, header}) {
@@ -22,7 +21,6 @@ export default function CardLayout ({children, redirect, header}) {
     }, [redirect])
 
     return (
-        // <div className= {styles.layout} style= {{ backgroundColor: UI.bgColor }}>
             <Card variant= {!UI.dark && 'outlined'}  className= {styles.layout} style= {{ backgroundColor: UI.bgColor, color: UI.color }}>
                 {
                     header && 
@@ -36,6 +34,5 @@ export default function CardLayout ({children, redirect, header}) {
                 
                 {children}
             </Card>
-        // </div>
     )
 }

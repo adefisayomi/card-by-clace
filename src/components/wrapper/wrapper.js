@@ -56,7 +56,7 @@ export default function wrapper ({children}) {
         <div className= {styles.wrapper} style= {{ backgroundColor: UI.dark ? 'rgb(22,27,34)' : UI.body, color: UI.color }}>
             <Header title= {title} />
             <Alert />
-            {trigger && !user && <CreateAccount />}
+            {/* {trigger && !user && <CreateAccount />} */}
             { open && <header> <Nav /> </header>}
             <main style= {{ minHeight: !open && '100vh' }}>{children}</main>
             { open && <footer><Footer /></footer>}

@@ -11,6 +11,7 @@
     transition: 0.4s;
     transform: translateX(80%);
     top: 5px;
+    justify-content: space-between;
     right: 0;
 }
 .nav_home {
@@ -21,17 +22,16 @@
     margin-right: 10px;
 }
 .nav_user {
-    margin-right: 10px;
+    margin: 0 5px;
 }
 .nav:hover {
     transform: translateX(6px);
     transition: 0.4s;
 }
 .nav_search {
-    min-width: 220px;
+    flex: 1 1;
+    transition: 0.4s;
     transform: translateX(120%);
-    transition: 0.5s;
-    padding: 0 10px;
 }
 .nav:hover .nav_search{
     transform: translateX(0%);
@@ -46,12 +46,6 @@
         padding: 2px 5px;
     }
     .nav_home > span {
-        margin-right: 5px;
-    }
-    .nav_search {
-        min-width: 50px;
-    }
-    .nav_user {
         margin-right: 5px;
     }
 }

@@ -3,15 +3,16 @@
     display: flex;
     align-items: center;
     position: relative;
+    max-width: 200px;
     border-radius: 5px 20px 20px 5px ;
 }
 .search_tab > input {
     flex: 1 1;
     border: none;
     outline: none;
-    font-family: 'Roboto';
-    font-size: 13px;
-    color: grey;
+    font-family: 'Roboto mono';
+    font-size: 12px;
+    color: inherit;
     padding: 12px 10px;
     position: relative;
     border-radius: 5px 20px 20px 5px ;
@@ -21,7 +22,7 @@
     right: 0;
     top: 50%;
     margin: 0 10px;
-    background-color: white;
+    background-color: inherit;
     transform: translateY(-50%);
 }
 
@@ -29,14 +30,11 @@
   .search_tab > input {
     flex: 0 0 ;
     font-size: 12px;
-    color: black;
     padding: 10px;
-    position: relative;
-    background: none;
 } 
-.search_tab_icon {
+/* .search_tab_icon {
     display: none;
-}
+} */
 .search_tab{
     width: fit-content;
 }

@@ -10,7 +10,7 @@ export default function SearchTab ({onBlur, onFocus, id}) {
     const {UI} = GlobalState()
 
     return (
-       <div className= {styles.search_tab}>
+       <div className= {styles.search_tab} style= {{ color: UI.color, backgroundColor: UI.bgColor }}>
            <input onFocus= {onFocus} onBlur= {onBlur} id= {id} ref= {inputRef} type="text" placeholder= 'search...' />
            <span className= {styles.search_tab_icon}><Icon name= 'search' color= 'grey' link onClick= {() => inputRef.current.focus()} /></span>
        </div>

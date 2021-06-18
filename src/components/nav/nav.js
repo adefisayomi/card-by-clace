@@ -32,7 +32,7 @@ export default function Nav () {
 
     return(
         <div className= {styles.nav} style= {{ transform: open && 'translateX(0%)' }}>
-            <div className= {styles.nav_home} style= {{flexDirection: !open && cart?.length > 0 && 'row-reverse' }}>
+            <div className= {styles.nav_home} style= {{flexDirection: cart && cart.length > 0 && 'row-reverse' }}>
                 <span><Logo /></span>
                 <span>
                     <DropDown trigger= { <CardTab />}>

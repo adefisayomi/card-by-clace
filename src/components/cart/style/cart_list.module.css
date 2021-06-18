@@ -41,4 +41,7 @@
         max-width: 60px;
         height: 60px;
     }
+    .cart_list_container {
+        max-width: 100%;
+    }
 }

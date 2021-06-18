@@ -23,7 +23,7 @@ export default function slider ({images, dots= true}) {
             images && images.length > 0 ? 
             images.map((img, index) => (
               <div key= {index} className= {`keen-slider__slide ${styles.slides}`}>
-                <Image src= {img.url || ''} id= {img.id} />
+                <Image src= {img.url || ''} id= {img.id} fluid />
               </div>
             )) : 
             <Placeholder fluid className= {styles.slider_placeholder} inverted= {UI.dark ? true : false}>

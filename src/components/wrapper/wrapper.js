@@ -58,7 +58,7 @@ export default function wrapper ({children}) {
             <Alert />
             {/* {trigger && !user && <CreateAccount />} */}
             { open && <div classNam= {styles.wrapper_header}> <Nav /> </div>}
-            <main style= {{ minHeight: !open && '100vh' }}>{children}</main>
+            <div className= {styles.wrapper_main} style= {{ minHeight: !open && '100vh' }}>{children}</div>
             { open && <footer><Footer /></footer>}
         </div>
     )

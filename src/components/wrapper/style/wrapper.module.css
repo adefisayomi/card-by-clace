@@ -30,7 +30,7 @@
     height: 50px;
     max-width: 1000px;
 }
-.wrapper > main {
+.wrapper_main {
     display: flex;
     font-family: 'Roboto';
     flex-direction: column;
@@ -39,5 +39,5 @@
     padding: 5px;
     width: 100%;
     max-width: 1000px;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 50px);
 }

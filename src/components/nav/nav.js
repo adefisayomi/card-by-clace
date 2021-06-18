@@ -43,13 +43,14 @@ export default function Nav () {
             { open && <span style= {{ padding: '0 10px' }}><OrderSummary /></span> }
             { !open && <span className= {styles.nav_search}><SearchTab /></span>}
             { !open && user && <span className= {styles.nav_user}> <ProfileTab user= {user} width= '35px' /> </span>}
-            <span className={styles.nav_login}>
-                <Icon name= {user ? 'lock open' : 'lock'}
-                    circular link style= {{fontSize: '16px'}} 
-                    color= 'black' 
-                    onClick= {user ? () => userAction.logOut() : () => router.push('/login')}
-                />
-            </span>
+            {!open && 
+                <span className={styles.nav_login}>
+                    <Icon name= {user ? 'lock open' : 'lock'}
+                        circular link style= {{fontSize: '16px'}}
+                        color= 'black' 
+                        onClick= {user ? () => userAction.logOut() : () => router.push('/login')}
+                    />
+                </span>}
             <span><ToggleTheme /></span>
         </div>
     )

@@ -4,12 +4,12 @@
     width: 100%;
     align-items: center;
     position: relative;
-    z-index: 20;
+    z-index: 10;
 }
 .drop_down_trigger {
     display: flex;
     align-items: center;
-    z-index: 10;
+    z-index: 2;
 }
 .drop_down_list {
     display: flex;
@@ -20,7 +20,7 @@
     margin-top: 5px;
     top: 125%;
     left: 0;
-    z-index: 10;
+    z-index: 2;
 }
 .drop_down_overlay{
     position: fixed;
@@ -29,5 +29,5 @@
     min-height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.938);
+    background-color: rgba(0, 0, 0, 0.925);
 }

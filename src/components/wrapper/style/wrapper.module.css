@@ -6,7 +6,7 @@
     font-family: 'Roboto';
     position: relative;
 }
-.wrapper > header {
+.wrapper_header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -40,9 +40,4 @@
     width: 100%;
     max-width: 1000px;
     min-height: calc(100vh - 100px);
-}
-@media screen and (max-width: 600px) {
-    /* .wrapper > header {
-        background: none;
-    } */
 }

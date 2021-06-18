@@ -20,7 +20,7 @@ async function doLogin ({form, setAlert}) {
         const user = await axios.get('/user', {headers: { authorization: `Bearer ${token.data.data}` }})
         if(user && !user.data.success) throw new Error(user.data.message)
         // 
-        setAlert({message: `Successfuly logged in `})
+        setAlert({message: `login successful`})
         trigger('/user')
     }
     catch(err) {
@@ -40,7 +40,7 @@ async function doSignup ({form, setAlert}) {
         const user = await axios.get('/user', {headers: { authorization: `Bearer ${token.data.data}` }})
         if(user && !user.data.success) throw new Error(user.data.message)
         //
-        setAlert({message: `successfuly logged in`})
+        setAlert({message: `login successful`})
         return trigger('/user')
     }
     catch(err) {
@@ -60,8 +60,8 @@ const googleSignin = async ({path, setAlert}) => {
         if(user && !user.data.success) throw new Error(user.data.message)
         mutate('/user')
         const message = path == '/account/google/login' ?
-                    ` Successfuly logged in as ${user.data.data.username || user.data.data.first_name}` : 
-                    ` Account successfuly created for ${user.data.data.username || user.data.data.first_name}`
+                    ` login successful` :
+                    `account successfuly created.`
         setAlert({message: message})
         return
     }

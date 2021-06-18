@@ -51,7 +51,6 @@ export default function login () {
                                 placeholder= 'Password'
                                 name= 'password'
                                 type= {showPass ? 'text' : 'password'}
-                                // icon= {{name: showPass ? 'eye' : 'eye slash', link: true, onClick: togglePass, circular: UI.dark && true}}
                                 value= {form.password || ''}
                                 style= {{border: UI.border}}
                                 id= {styles.form_input}

@@ -6,7 +6,6 @@ import {cartReducer} from './reducers/cartAction'
 import {commentAction} from './reducers/commentAction'
 import {productAction} from './reducers/productAction'
 import {checkoutAction} from './reducers/checkoutAction'
-import cookie from 'cookie'
 
 
 const StateContext = createContext()

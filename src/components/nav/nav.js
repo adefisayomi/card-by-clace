@@ -66,7 +66,7 @@ const ToggleTheme = () => {
     return (
         <div style= {{ width: 'fit-content' }}>
             
-            <IconButton onClick= {toggleUI} aria-label="cart" style= {{ color: 'black' }} color= 'inherit' disableElevation >
+            <IconButton onClick= {() => toggleUI({ type: 'TOGGLE_UI' })} aria-label="cart" style= {{ color: 'black' }} color= 'inherit' disableElevation >
                 {
                     UI.dark ? 
                     <Brightness4Icon style= {{ fontSize: '16px' }} /> :

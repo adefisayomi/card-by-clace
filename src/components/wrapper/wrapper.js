@@ -7,7 +7,6 @@ import axios from 'axios'
 import Nav from '../nav/nav'
 import { useEffect, useState } from 'react'
 import {useRouter} from 'next/router'
-import CreateAccount from '../trigger/createAccount'
 
 export default function wrapper ({children}) {
 
@@ -52,11 +51,10 @@ export default function wrapper ({children}) {
     }, [title, user])
 
 
-    return ( 
-        <div className= {styles.wrapper} style= {{ backgroundColor: UI.dark ? 'rgb(22,27,34)' : UI.body, color: UI.color }}>
+    return (
+        <div className= {styles.wrapper} style= {{ backgroundColor: UI.body, color: UI.color }}>
             <Header title= {title} />
             <Alert />
-            {/* {trigger && !user && <CreateAccount />} */}
             { open && <div classNam= {styles.wrapper_header}> <Nav /> </div>}
             <div className= {styles.wrapper_main} style= {{ minHeight: !open && '100vh' }}>{children}</div>
             { open && <footer><Footer /></footer>}

@@ -1,11 +1,9 @@
 import Head from 'next/head'
 import {useRouter} from 'next/router'
-
 const Header = () => {
 
     const router = useRouter()
     const title = router.asPath.split('/').pop().replace('/', '|').replace('[', '').replace(']', '')
-
 
     return (
         <Head>

@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, useCallback, useReducer} from "react";
+import { useContext, createContext, useState, useEffect, useCallback, useReducer} from "react";
 import useSWR from "swr";
 import {themeObject, themeReducer} from './reducers/themeAction'
 import {userAction} from './reducers/userAction'
@@ -6,16 +6,20 @@ import {cartReducer} from './reducers/cartAction'
 import {commentAction} from './reducers/commentAction'
 import {productAction} from './reducers/productAction'
 import {checkoutAction} from './reducers/checkoutAction'
+import cookie from 'cookie'
 
 
 const StateContext = createContext()
 
 export default function GlobalStateProvider ({children}) {
 
-   // theme
-   const [theme, dispatchTheme] = useReducer(themeReducer, themeObject)
-   const UI = theme.isDark ? theme.dark : theme.light
-   const toggleUI = useCallback(() => dispatchTheme({type: 'TOGGLE_UI'}))
+
+    const [themeRef, toggleUI] = useReducer( themeReducer, {}, () => {
+        const theme = typeof window !== 'undefined' && JSON.parse(localStorage.getItem('card_theme'))
+        return theme ? theme : themeObject
+    } )
+    const UI = themeRef && themeRef.isDark ? themeRef.dark : themeRef.light
+
 
     //  ----set ALert -------
     const [alert, setAlert] = useState({message: '', type: ''})

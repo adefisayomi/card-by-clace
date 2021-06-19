@@ -39,7 +39,7 @@ useEffect(() => {
 
 
   return (
-      <div className= {styles.home} id= 'home' >
+      <div className= {styles.home} id= 'home'>
             {
                 products && products.length > 0 ? 
                 products.map((product, index) => (

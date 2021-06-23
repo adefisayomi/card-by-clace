@@ -8,6 +8,10 @@ import Nav from '../nav/nav'
 import { useEffect, useState } from 'react'
 import {useRouter} from 'next/router'
 
+
+
+
+
 export default function wrapper ({children}) {
 
     const router = useRouter()
@@ -24,8 +28,6 @@ export default function wrapper ({children}) {
     const source = axios.CancelToken.source();
     const cancelToken = source.token
     axios.defaults.cancelToken = cancelToken
-
-    
 
     axios.interceptors.request.use(req => {
         // if (!user && req && req.method !== 'get') {
@@ -52,10 +54,11 @@ export default function wrapper ({children}) {
 
 
     return (
-        <div className= {styles.wrapper} style= {{ backgroundColor: UI.body, color: UI.color }}>
+        
+        <div className= {styles.wrapper} style= {{ color: UI.color }}>
             <Header title= {title} />
             <Alert />
-            { open && <div classNam= {styles.wrapper_header}> <Nav /> </div>}
+            { open && <div className= {styles.wrapper_header}> <Nav /> </div>}
             <div className= {styles.wrapper_main} style= {{ minHeight: !open && '100vh' }}>{children}</div>
             { open && <footer><Footer /></footer>}
         </div>

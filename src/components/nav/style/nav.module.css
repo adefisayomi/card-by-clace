@@ -14,6 +14,11 @@
     justify-content: space-between;
     right: 0;
 }
+.nav_logo {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+}
 .nav_home {
     display: flex;
     align-items: center;

@@ -1,4 +1,4 @@
-import styles from './style/cardLayout.module.css'
+import styles from './style/cardLayout.module.scss'
 import {GlobalState} from '../../context/globalState'
 import router from 'next/router'
 import {Icon} from 'semantic-ui-react'

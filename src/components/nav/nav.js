@@ -24,7 +24,7 @@ export default function Nav () {
 
     useEffect(() => {
         const getPath = () => {
-            return router.asPath.includes('checkout') ? setOpen(true) : setOpen(false)
+            return router.asPath.split('/').pop() === 'checkout' ? setOpen(true) : setOpen(false)
         }
         getPath()
     }, [router.asPath])
@@ -32,15 +32,17 @@ export default function Nav () {
 
     return(
         <div className= {styles.nav} style= {{ transform: open && 'translateX(0%)' }}>
+
+            <span className= {styles.nav_logo}><Logo /></span>
+
+
+
             <div className= {styles.nav_home} style= {{flexDirection: cart && cart.length === 0 && 'row-reverse' }}>
                 <span>
                     <DropDown trigger= { <CardTab />}>
                         <Cart />
                     </DropDown>
                 </span>
-
-                <span><Logo /></span>
-                
             </div>
             { open && <span style= {{ padding: '0 10px' }}><OrderSummary /></span> }
             { !open && <span className= {styles.nav_search}><SearchTab /></span>}
@@ -66,7 +68,7 @@ const ToggleTheme = () => {
     return (
         <div style= {{ width: 'fit-content' }}>
             
-            <IconButton onClick= {() => toggleUI({ type: 'TOGGLE_UI' })} aria-label="cart" style= {{ color: 'black' }} color= 'inherit' disableElevation >
+            <IconButton onClick= {() => toggleUI({ type: 'TOGGLE_UI' })} aria-label="cart" style= {{ color: 'black' }} color= 'inherit' >
                 {
                     UI.dark ? 
                     <Brightness4Icon style= {{ fontSize: '16px' }} /> :

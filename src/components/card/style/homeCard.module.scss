@@ -1,0 +1,39 @@
+.homeCard {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    border-radius: 8px;
+    border: 0.5px solid rgb(230, 230, 230);
+
+    .homeCard_header {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        left: 0;
+        width: 100%;
+        color: white;
+        transform: translateX(-150%);
+        transition: 0.4s;
+        background-color: rgba(0, 0, 0, 0.644);
+    }
+
+    .homeCard_details {
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: white;
+        transform: translateX(150%);
+        transition: 0.4s;
+        background-color: rgba(0, 0, 0, 0.644);
+    }
+}
+.homeCard:hover .homeCard_header, .homeCard:hover .homeCard_details {
+    transform: translateX(0%);
+    transition: 0.4s;
+}

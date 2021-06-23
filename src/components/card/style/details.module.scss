@@ -1,0 +1,23 @@
+.action {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.action_cart {
+    display: flex;
+    color: white;
+    margin-right: 12px;
+    font-size: 12px;
+    flex: 1 1;
+    position: relative;
+    align-items: baseline;
+}
+.action_cart > p {
+    color: white;
+    font-size: 13px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    transform: translateY(-4px);
+}

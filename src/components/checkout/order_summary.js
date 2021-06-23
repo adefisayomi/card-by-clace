@@ -13,7 +13,7 @@ export default function orderSummary () {
         <div className= {styles.order_summary}>
             <span>
                 <h1>total -- </h1>
-                <h4>₦ {total || '₦ 0:00'}</h4>
+                <h4>₦ {total || ' 0:00'}</h4>
             </span>
         </div>
     )

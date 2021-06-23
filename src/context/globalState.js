@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, useEffect, useCallback, useReducer} from "react";
+import { useContext, createContext, useState, useReducer} from "react";
 import useSWR from "swr";
 import {themeObject, themeReducer} from './reducers/themeAction'
 import {userAction} from './reducers/userAction'
@@ -12,13 +12,10 @@ const StateContext = createContext()
 
 export default function GlobalStateProvider ({children}) {
 
-
-    const [themeRef, toggleUI] = useReducer( themeReducer, {}, () => {
-        const theme = typeof window !== 'undefined' && JSON.parse(localStorage.getItem('card_theme'))
-        return theme ? theme : themeObject
-    } )
-    const UI = themeRef && themeRef.isDark ? themeRef.dark : themeRef.light
-
+    const [UI, toggleUI] = useReducer(themeReducer, {}, () => {
+        const theme = typeof window !== 'undefined' && localStorage.getItem('card_theme')
+        return theme ? JSON.parse(theme) : themeObject.light
+    })
 
     //  ----set ALert -------
     const [alert, setAlert] = useState({message: '', type: ''})

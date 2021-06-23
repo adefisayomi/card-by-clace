@@ -1,9 +1,10 @@
-import styles from './home.module.css'
+import styles from './home.module.scss'
 import useSWR, {useSWRInfinite} from 'swr'
-import DisplayProduct from '../user/displayProduct'
+import Homecard from '../card/homeCard'
 import { GlobalState } from '../../context/globalState'
 import LoadingProduct from '../re-usables/loadingProduct'
 import {useEffect, useState} from 'react'
+import Grid from '../card/grid'
 
 
 
@@ -26,26 +27,41 @@ useEffect(() => {
 
 
 // const onScroll = () => {
-    typeof window !== 'undefined' && window.addEventListener('scroll', function() {
+    // typeof window !== 'undefined' && window.addEventListener('scroll', function() {
 
-            const totalHeight = document.body.scrollHeight // the total page height
-            const scrollPoint = window.scrollY + window.innerHeight;  // scroll point on the page
-            // fetch more data when you get to to page end
-            if (scrollPoint === totalHeight) {
-                setCount( prevState => prevState + productPerRequest )
-                setSize( size + 1 )
-            }
-        });
+    //         const totalHeight = document.body.scrollHeight // the total page height
+    //         const scrollPoint = window.scrollY + window.innerHeight;  // scroll point on the page
+    //         // fetch more data when you get to to page end
+    //         if (scrollPoint === totalHeight) {
+    //             setCount( prevState => prevState + productPerRequest )
+    //             setSize( size + 1 )
+    //         }
+    //     });
+
+
+    const sizes = [ '200px', '230px', '250px', '270px','300px','340px','370px', '400px','450px']
+    const pickRandomSize = () => {
+        const index = Math.floor(Math.random() * 10)
+        return sizes[index]
+    }
+
 
 
   return (
       <div className= {styles.home} id= 'home'>
-            {
-                products && products.length > 0 ? 
-                products.map((product, index) => (
-                <DisplayProduct key= {index} product= {product} />
-                )) : <LoadingProduct />
-            }
+          
+                {
+                    products && products.length > 0 ? 
+                    <Grid>
+                        {
+                            products.map((product, index) => (
+                            <div key= {index} style= {{ height: pickRandomSize() }} >
+                                <Homecard product= {product} height= {pickRandomSize()} />
+                            </div>
+                            ))
+                        }
+                    </Grid> : <LoadingProduct reverse />
+                }
         </div>
   );
 }

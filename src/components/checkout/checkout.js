@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import styles from './style/checkout.module.css'
-import {useRouter} from 'next/router'
+import router from 'next/router'
 import ShippingForm from './shipping'
 import CardLayout from '../re-usables/cardLayout'
 import { useEffect } from 'react';
@@ -10,8 +10,7 @@ import { GlobalState } from '../../context/globalState';
 
 export default function checkout () {
 
-  const router = useRouter()
-  const {cart, setAlert, checkoutAction, user} = GlobalState()
+  const {cart, setAlert, checkoutAction} = GlobalState()
   const [form, setForm] = useState({})
   const [loading, setLoading] = useState(false)
   const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
@@ -21,7 +20,7 @@ export default function checkout () {
   const handleSubmit = async (e) => {
       e.preventDefault()
       setLoading(true)
-      await checkoutAction({form, setAlert, router})
+      await checkoutAction.checkout({form, setAlert, router})
       setLoading(false)
   }
 

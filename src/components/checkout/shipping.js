@@ -46,6 +46,8 @@ export default function shipping ({form, loading, getForm, handleSubmit, getOpti
                 {
                     index === 0 ? 
                     <ShippingForm form= {form} getForm= {getForm} handleSubmit= {handleSubmit} getOption= {getOption} /> : 
+                    index === 1 ? 
+                    <p>Redirectiong to billing page...</p> : 
                     ''
                 }
                
@@ -60,10 +62,10 @@ export default function shipping ({form, loading, getForm, handleSubmit, getOpti
                   }
                   <Button
                     color="primary"
-                    // onClick={handleNext}
+                    onClick={handleNext}
                     icon= {{ name: loading? 'spinner' : 'cart', loading }}
                     size= 'small'
-                    onClick= {handleSubmit}
+                    // onClick= {handleSubmit}
                     content= {activeStep === steps.length - 1 ? 'Finish' : 'Process order'}
                   />
                 </div>
@@ -98,14 +100,14 @@ const ShippingForm = ({form, getForm, handleSubmit, getOption}) => {
         <Form onSubmit= {handleSubmit} id= {styles.shipping_form}>
 
                 <Form.Field>
-                    <label htmlFor="client_id" style= {{ textTransform: 'uppercase' }}>client ID 
-                        <em style= {{ textTransform: 'lowercase' }}>( skip the rest if you have your client ID )</em>
+                    <label htmlFor="unique_id" style= {{ textTransform: 'uppercase' }}>unique ID 
+                        <em style= {{ textTransform: 'lowercase' }}>( skip the rest if you have your unique ID )</em>
                     </label>
                     <input
-                        placeholder= 'client ID'
-                        name= 'client_id'
+                        placeholder= 'unique ID'
+                        name= 'unique_id'
                         type= 'text'
-                        value= {form.client_id || ''}
+                        value= {form.unique_id || ''}
                         style= {{border: UI.border}}
                         onChange= {getForm}
                     />

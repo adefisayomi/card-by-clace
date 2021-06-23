@@ -1,7 +1,6 @@
 import { GlobalState } from '../../context/globalState'
 import styles from './style/cart_list.module.css'
 import useSWR from 'swr'
-import Slider from '../slider/slider'
 import { Icon, Placeholder, Image } from 'semantic-ui-react'
 import OrderOptions from '../order/order_options'
 import { useEffect, useState } from 'react'
@@ -45,7 +44,6 @@ export default function CartList ({props}) {
                 product && product._id ? 
                 <div className= {styles.cart_list_container}>
                 <span className= {styles.cart_list_image}>
-                    {/* <Slider dots= {false} images= {product?.details?.images} /> */}
                     <Image src= { product?.details?.images[0].url || '' } />
                 </span>
                 <span className= {styles.cart_list_options}>

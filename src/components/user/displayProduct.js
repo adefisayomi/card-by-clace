@@ -12,15 +12,15 @@ export default function displayProduct ({product}) {
     return (
         <CardLayout>
             <div className= {styles.display_product}>
-                <header>
+                <div className= {styles.display_product_images}> <Slider images= {product?.details?.images} /> </div>
+                <div className= {styles.display_product_header}>
                     <Header 
                         header= {{ title: product?.details?.title, subheader: product?.details?.category }}
                         user= { author }
                         icon= {{ name: 'more', content: product?.details?.description }}
                         path= {{ title: `/${author?.username||author?._id}/${product?._id}` }}
                     />
-                </header>
-                <div className= {styles.display_product_images}> <Slider images= {product?.details?.images} /> </div>
+                </div>
             </div>
         </CardLayout>
     )

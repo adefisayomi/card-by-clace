@@ -11,6 +11,7 @@ import {useState, useEffect} from 'react'
 export default function cart () {
 
     const {cart} = GlobalState()
+    const {UI} = GlobalState()
     const router = useRouter()
     const [hide, setHide] = useState(false)
 
@@ -22,7 +23,7 @@ export default function cart () {
     }, [router.asPath])
     
     return (
-        <div className= {styles.cart}>
+        <div className= {styles.cart} style= {{backgroundColor: UI.body }} >
             {
                 cart && cart.length > 0 ? 
                 cart.map((prod, index) => (

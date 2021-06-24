@@ -13,7 +13,8 @@ import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Brightness5Icon from '@material-ui/icons/Brightness5';
 import LogoTab from './logoTab'
 import {useRouter} from 'next/router'
-import Popup from '../re-usables/pop_up'
+// import Popup from '../re-usables/pop_up'
+import {Popup} from 'semantic-ui-react'
 
 
 
@@ -81,9 +82,10 @@ export default function nav () {
             { !open && user && <span className= {styles.nav_user}> <ProfileTab user= {user} width= '35px' /> </span>}
 
             <span className= {styles.nav_theme}>
-                <Popup trigger= { <CardTab />} fixed >
+                <DropDown trigger= { <CardTab />}>
                     <Cart />
-                </Popup>
+                </DropDown> 
+
                 <ToggleUI />
             </span>
         </div>
@@ -107,3 +109,4 @@ const ToggleUI = () => {
         </div>
     )
 }
+

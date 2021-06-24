@@ -14,10 +14,12 @@
     transition: 0.3s;
     width: calc(100%/2);
     position: relative;
+    overflow: hidden;
 }
 .gellery_span {
     display: flex;
     width: 100%;
+    overflow: hidden;
     /* cursor: pointer; */
     height: 230px;
 }
@@ -25,6 +27,7 @@
     display: none;
     position: absolute;
     top: 0;
+    overflow: hidden;
     left: 0;
     width: 100%;
     padding: 4px;
@@ -37,6 +40,7 @@
     width: 100%;
     transition: 0.4s;
     padding: 5px;
+    overflow: hidden;
 }
 .gallery_div:hover .gallery_span_overlay {
     display: flex;

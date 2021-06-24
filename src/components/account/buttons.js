@@ -31,6 +31,7 @@ export default function button ({path, content}) {
                     name= {loading ? 'spinner' : 'google'}
                     loading= {loading}
                     circular
+                    color= 'blue'
                     fitted
                     link
                 /> 

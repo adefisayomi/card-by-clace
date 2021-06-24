@@ -29,7 +29,7 @@ export default function slider ({images, dots= true, height, animateHeight= true
             {
                 images && images.length > 0 ?
                 images.map((img, index) => (
-                  <div className= {styles.sliders} style= {{minHeight: height || '400px'}}>
+                  <div className= {styles.sliders} style= {{minHeight: height ? height : ''}}>
                     <Image src={img.url || ''} key= {index} />
                   </div>
                 )) :

@@ -29,7 +29,7 @@ export default function login () {
     }
    
     return(
-        <CardLayout header= 'Card by clace' redirect= {user}>
+        <CardLayout header= 'Card by clace' redirect= {user} width= '500px'>
             <div className= {styles.login}>
                  <div className= {styles.login_container}>
                     <div className= {styles.login_options}>

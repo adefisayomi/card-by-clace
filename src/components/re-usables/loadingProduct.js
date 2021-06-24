@@ -4,12 +4,12 @@ import CardLayout from './cardLayout'
 import { GlobalState } from '../../context/globalState'
 
 
-export default function LoadingUser ({reverse}) {
+export default function LoadingUser ({reverse, width}) {
 
     const {UI} = GlobalState()
 
     return (
-        <CardLayout>
+        <CardLayout width= {width}>
             <div className= {styles.loading}  style= {{ flexDirection: reverse && 'column-reverse' }}>
                 <header>
                     <Placeholder className= {styles.profile} inverted= {UI.dark}>

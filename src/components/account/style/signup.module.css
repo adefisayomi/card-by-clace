@@ -107,19 +107,17 @@
     font-size: 12px;
 }
 #form_button {
-    background: none;
-    border: 2px solid grey;
     border-radius: 3px;
     padding: 10px;
     font-family: 'Roboto';
     width: 100%;
-    color: inherit;
+    color: white;
 }
-#form_button:hover {
+/* #form_button:hover {
     border: 2px solid var(--bColor);
     background-color: black;
     color: var(--bColor);
-}
+} */
 @media screen and (max-width: 450px){
     .signup main {
         padding: 20px 10px;

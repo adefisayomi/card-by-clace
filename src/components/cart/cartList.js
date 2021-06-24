@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 
 export default function CartList ({props}) {
 
-    const {cartAction} = GlobalState()
+    const {cartAction, UI} = GlobalState()
     const {data: product} = useSWR(() => props ? `/products/query/${props._id}` : '', {revalidateOnFocus: true})
     const [form, setForm] = useState({quantity: props.quantity || '', options: props.options || {}})
     const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
@@ -39,7 +39,7 @@ export default function CartList ({props}) {
     
 
     return (
-        <div className= {styles.cart_list} >
+        <div className= {styles.cart_list} style= {{ borderBottom: UI.border }} >
             {
                 product && product._id ? 
                 <div className= {styles.cart_list_container}>

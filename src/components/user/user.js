@@ -32,16 +32,16 @@ export default function User () {
 
 
     return(
-        <CardLayout width= '550px' >
+        <CardLayout width= '600px' >
             {
                 currentUser && currenUserProducts ?
                 <div className= {styles.user}>
-                    <header  style= {{ borderBottom: UI.border}} >
+                    <div className= {styles.user_header}  style= {{ borderBottom: UI.border}} >
                         <Header 
                             user= {currentUser}
                             header= {{ title: `@ ${currentUser.username}` || '', 
                             subheader: `${currentUser?.first_name || ''}  ${currentUser?.last_name?.join(' ') || '' }` || '' }}
-                            icon= {{name: currentUser?._id === user?._id && 'edit'}}
+                            icon= {{name: currentUser?._id === user?._id && 'edit', content: 'Edit profile'}}
                             path= {{ icon: `${router.asPath}/profile` }}
                         />
 
@@ -49,7 +49,7 @@ export default function User () {
                         <span className= {styles.user_footer}>
                             <Footer content= {{ content: 'Add product', icon: 'plus', onClick: () => router.push(`${router.asPath}/create`) }}/>
                         </span>}
-                    </header>
+                    </div>
 
                     <div className= {styles.user_main}>
                         {
@@ -61,9 +61,9 @@ export default function User () {
 
                     isValidating ?
 
-                  <LoadingProduct title = 'Loading profile' /> :
+                  <LoadingProduct title = 'Loading profile' width= '600px' /> :
 
-                  <UserNotFound content= 'User not found' />
+                  <UserNotFound content= 'User not found' width= '600px' />
             }
         </CardLayout>
     )

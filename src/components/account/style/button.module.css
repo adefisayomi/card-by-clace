@@ -8,18 +8,17 @@
 #button{
     display: flex;
     align-items: center;
-    background: none;
-    border: 2px solid grey;
+    background: black;
     border-radius: 3px;
-    padding: 10px;
+    padding: 8px;
     font-family: 'Roboto';
     width: 100%;
-    color: inherit;
+    color: white;
 }
 #button > h1 {
     margin: 0;
     padding: 0;
-    font-weight: 500;
+    font-weight: 700;
     font-family: 'Roboto';
     font-size: 13px;
     padding-left: 10px;
@@ -27,8 +26,8 @@
 .google_button_icon{
     font-size: 16px;
 }
-#button:hover {
+/* #button:hover {
     border: 2px solid var(--bColor);
     background-color: black;
     color: var(--bColor);
-}
+} */

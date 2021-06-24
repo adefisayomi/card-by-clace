@@ -17,16 +17,14 @@
     font-weight: 500;
 }
 #footer_button {
-    background: none;
-    border: 2px solid grey;
     border-radius: 2px;
     padding: 10px 20px;
     font-family: 'Roboto';
     width: fit-content;
-    color: inherit;
+    color: white;
 }
-#footer_button:hover {
+/* #footer_button:hover {
     border: 2px solid var(--bColor);
     background-color: black;
     color: var(--bColor);
-}
+} */

@@ -5,6 +5,7 @@ import { Label, Icon } from 'semantic-ui-react'
 import {useRouter} from 'next/router'
 import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
+import Popup from './pop_up'
 
 
 export default function gallery ({products, onClick}) {
@@ -20,7 +21,7 @@ export default function gallery ({products, onClick}) {
                     <div key= {index} className= {styles.gallery_div}>
 
                         <span className= {styles.gellery_span}>
-                            <Slider images= {product?.details?.images || []} />
+                            <Slider images= {product?.details?.images || []} animateHeight= {false} />
                         </span>
                         <span className= {styles.gallery_span_overlay}>
                             <span>
@@ -29,9 +30,14 @@ export default function gallery ({products, onClick}) {
                                     </Label>
                                     {
                                         product.author?._id === user?._id &&
-                                        <IconButton aria-label="settings" onClick= {() => router.push(`${router.asPath}/${product._id}/update`)}>
-                                            <EditIcon style= {{ color: 'rgb(29, 162, 250)', fontSize: '15px'}}  />
-                                        </IconButton>
+                                        <Popup
+                                            trigger= {
+                                                <IconButton aria-label="settings" onClick= {() => router.push(`${router.asPath}/${product._id}/update`)}>
+                                                    <EditIcon style= {{ color: 'rgb(29, 162, 250)', fontSize: '15px'}}  />
+                                                </IconButton>
+                                            }
+                                            content= 'update product'
+                                        />
                                     }
                             </span>
                         </span>

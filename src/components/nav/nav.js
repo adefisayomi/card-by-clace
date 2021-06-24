@@ -13,54 +13,8 @@ import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Brightness5Icon from '@material-ui/icons/Brightness5';
 import LogoTab from './logoTab'
 import {useRouter} from 'next/router'
-// import Popup from '../re-usables/pop_up'
-import {Popup} from 'semantic-ui-react'
 
 
-
-// export default function Nav () {
-
-    // const router = useRouter()
-    // const {UI, user, userAction, cart, setAlert} = GlobalState()
-    // const [open, setOpen] = useState(false)
-
-//     useEffect(() => {
-//         const getPath = () => {
-//             return router.asPath.split('/').pop() === 'checkout' ? setOpen(true) : setOpen(false)
-//         }
-//         getPath()
-//     }, [router.asPath])
-
-
-//     return(
-//         <div className= {styles.nav} style= {{ transform: open && 'translateX(0%)' }}>
-
-//             <span className= {styles.nav_logo}><Logo /></span>
-
-
-
-//             <div className= {styles.nav_home} style= {{flexDirection: cart && cart.length === 0 && 'row-reverse' }}>
-//                 <span>
-                    // <DropDown trigger= { <CardTab />}>
-                    //     <Cart />
-                    // </DropDown>
-//                 </span>
-//             </div>
-//             { open && <span style= {{ padding: '0 10px' }}><OrderSummary /></span> }
-//             { !open && <span className= {styles.nav_search}><SearchTab /></span>}
-//             { !open && user && <span className= {styles.nav_user}> <ProfileTab user= {user} width= '35px' /> </span>}
-//             {!open && 
-//                 <span className={styles.nav_login}>
-//                     <Icon name= {user ? 'lock open' : 'lock'}
-//                         circular link style= {{fontSize: '16px'}}
-//                         color= 'black' 
-//                         onClick= {user ? () => userAction.logOut() : () => router.push('/login')}
-//                     />
-//                 </span>}
-//             <span><ToggleTheme /></span>
-//         </div>
-//     )
-// }
 
 
 export default function nav () {
@@ -69,6 +23,13 @@ export default function nav () {
     const {UI, user, userAction, cart, setAlert} = GlobalState()
     const [open, setOpen] = useState(false)
 
+    useEffect(() => {
+        const getPath = () => {
+            return router.asPath.split('/').pop() === 'checkout' ? setOpen(true) : setOpen(false)
+        }
+        getPath()
+    }, [router.asPath])
+
     return (
         <div className= {styles.nav}>
             <span className= {styles.nav_logo}>
@@ -76,10 +37,21 @@ export default function nav () {
             </span>
 
             <span className= {styles.nav_cart}>
-                    <SearchTab />
+                {
+                    open ? <OrderSummary /> : <SearchTab />
+                }
             </span>
 
             { !open && user && <span className= {styles.nav_user}> <ProfileTab user= {user} width= '35px' /> </span>}
+
+            {!open && 
+                <span className={styles.nav_login}>
+                    <Icon name= {user ? 'lock open' : 'lock'}
+                        circular link style= {{fontSize: '16px'}}
+                        color= 'black' 
+                        onClick= {user ? () => userAction.logOut() : () => router.push('/login')}
+                    />
+                </span>}
 
             <span className= {styles.nav_theme}>
                 <DropDown trigger= { <CardTab />}>

@@ -63,7 +63,7 @@ export default function wrapper ({children}) {
                     <Nav />
                 </div>
             }
-            <div className= {styles.wrapper_main} style= {{ minHeight: !open && '50vh' }}>{children}</div>
+            <div className= {styles.wrapper_main} >{children}</div>
             { open && <footer><Footer /></footer>}
         </div>
     )

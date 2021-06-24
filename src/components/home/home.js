@@ -5,6 +5,7 @@ import { GlobalState } from '../../context/globalState'
 import LoadingProduct from '../re-usables/loadingProduct'
 import {useEffect, useState} from 'react'
 import Grid from '../card/grid'
+import LoadingGrid from '../card/loadingGrid'
 
 
 
@@ -51,16 +52,17 @@ useEffect(() => {
       <div className= {styles.home} id= 'home'>
           
                 {
-                    products && products.length > 0 ? 
+                    products && products.length > 0 ?
                     <Grid>
                         {
                             products.map((product, index) => (
-                            <div key= {index} style= {{ height: pickRandomSize() }} >
-                                <Homecard product= {product} height= {pickRandomSize()} />
+                            <div key= {index} >
+                                <Homecard product= {product} height= {pickRandomSize()}  />
                             </div>
                             ))
                         }
-                    </Grid> : <LoadingProduct reverse />
+                    </Grid> : 
+                    <LoadingGrid />
                 }
         </div>
   );

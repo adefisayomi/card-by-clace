@@ -1,4 +1,4 @@
-import styles from './slider.module.scss'
+import styles from './coverSlider.module.scss'
 import {useState} from 'react';
 import SwipeableViews from 'react-swipeable-views';
 import {Image, Placeholder } from 'semantic-ui-react'
@@ -6,7 +6,7 @@ import {GlobalState} from '../../context/globalState'
 
 
 
-export default function slider ({images, dots= true, height, animateHeight= true}) {
+export default function slider ({images, dots= true}) {
 
   const [swipeableActions, setSwipeableActions] = useState();
   const {UI} = GlobalState()
@@ -24,12 +24,12 @@ export default function slider ({images, dots= true, height, animateHeight= true
                 resistance
                 index= {currentSlide}
                 onChangeIndex={handleSlideChange}
-                animateHeight= {animateHeight}
+                animateHeight
             >
             {
                 images && images.length > 0 ?
                 images.map((img, index) => (
-                  <div className= {styles.sliders} style= {{minHeight: height || '400px'}}>
+                  <div className= {styles.sliders}>
                     <Image src={img.url || ''} key= {index} />
                   </div>
                 )) :

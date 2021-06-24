@@ -4,6 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useSWR from 'swr'
 import { GlobalState } from '../../context/globalState';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
 
 
 
@@ -26,17 +27,16 @@ export default function details ({product}) {
         
           <span className= {styles.action_cart}>
             <IconButton aria-label="add to favorites" >
-                <ShoppingCartIcon fontSize= 'small'style= {{ color: UI.color }} />
+                <ShoppingCartIcon fontSize= 'small' style= {{ color: 'white' }}/>
             </IconButton>
-            <p>₦ {product?.details?.price}</p>
+            <p>₦ {product?.details?.price || '0:00'}</p>
           </span>
 
           <span>
-            <IconButton aria-label="add to favorites" >
-                <ArrowForwardIosIcon style= {{ color: 'rgb(29, 162, 250)' }} />
+            <IconButton aria-label="view product" >
+                <ViewCarouselIcon style= {{ color: 'rgb(29, 162, 250)' }} />
             </IconButton>
           </span>
-          
     </div>
   );
 }

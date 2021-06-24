@@ -1,6 +1,9 @@
 .grid {
     width: 100%;
     padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     // position: relative;
     // max-width: 100%;
     // display: grid;
@@ -35,7 +38,7 @@
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
   margin-left: -20px; /* gutter size offset */
-  width: auto;
+  width: 100%;
 }
 .my_masonry_grid_column {
   padding-left: 20px; /* gutter size */
@@ -55,5 +58,8 @@
 @media screen and (max-width: 600px) {
     .grid{
         padding: 20px 5px;
+    }
+    .my_masonry_grid_column > div {
+      margin-bottom: 40px;
     }
 }

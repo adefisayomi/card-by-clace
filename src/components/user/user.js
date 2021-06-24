@@ -32,7 +32,7 @@ export default function User () {
 
 
     return(
-        <CardLayout >
+        <CardLayout width= '550px' >
             {
                 currentUser && currenUserProducts ?
                 <div className= {styles.user}>

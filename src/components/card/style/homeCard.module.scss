@@ -37,3 +37,19 @@
     transform: translateX(0%);
     transition: 0.4s;
 }
+
+.homeCard_placeholder {
+    width: 300px;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 800px) {
+    .homeCard_placeholder {
+        width: 350px;
+    }  
+}
+@media screen and (max-width: 500px) {
+    .homeCard_placeholder {
+        width: 400px;
+    }  
+}

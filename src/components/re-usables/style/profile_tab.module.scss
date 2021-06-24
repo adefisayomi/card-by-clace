@@ -1,0 +1,31 @@
+.profile_tab{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 2px solid rgb(75, 75, 75);
+    background: none;
+    padding: 2px;
+    border-radius: 100%;
+    cursor: pointer;
+
+    .profile_tab_image{
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+    .profile_tab_image img {
+        border-radius: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    h1{
+        font-family: 'Roboto';
+        font-size: 15px;
+        font-weight: 900;
+        margin: 0;
+        text-transform: uppercase;
+        padding: 0;
+    }
+}

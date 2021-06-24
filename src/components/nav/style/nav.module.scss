@@ -1,4 +1,4 @@
-.nav {
+/* .nav {
     background-color: var(--bColor);
     border-radius: 5px 0 0 5px;
     display: flex;
@@ -53,4 +53,28 @@
     .nav_home > span {
         margin-right: 5px;
     }
+} */
+
+.nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    // position: fixed;
+    max-width: 1300px;
+    // top: 5px;
+    // left: 0;
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.nav_cart {
+    flex: 1 1;
+    width: fit-content;
+    display: flex;
+    align-items: center;
 }

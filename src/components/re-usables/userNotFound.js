@@ -1,4 +1,4 @@
-import styles from './style/loadingUser.module.css'
+import styles from './style/loadingUser.module.scss'
 import {Icon} from 'semantic-ui-react'
 import Empty from './empty'
 import { useRouter } from 'next/router'

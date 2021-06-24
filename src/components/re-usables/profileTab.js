@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
-import styles from './style/profile_tab.module.css'
+import styles from './style/profile_tab.module.scss'
 
 
 export default function ProfileTab ({width, user, border}) {
 
     const router = useRouter()
 
-    const randomColor = () =>  '#'+Math.floor(Math.random()*16777215).toString(16)
+    const randomColor = () =>  '#'+ Math.floor(Math.random()*16777215).toString(16)
 
     return(
         <>

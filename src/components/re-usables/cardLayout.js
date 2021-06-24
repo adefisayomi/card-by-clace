@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import Card from '@material-ui/core/Card';
 
 
-export default function CardLayout ({children, redirect, header}) {
+export default function CardLayout ({children, redirect, header, width}) {
 
     const {UI} = GlobalState()
     
@@ -21,7 +21,7 @@ export default function CardLayout ({children, redirect, header}) {
     }, [redirect])
 
     return (
-            <Card variant= {!UI.dark && 'outlined'}  className= {styles.layout} style= {{ backgroundColor: UI.bgColor, color: UI.color }}>
+            <Card variant= {!UI.dark && 'outlined'}  className= {styles.layout} style= {{ maxWidth: width, backgroundColor: UI.bgColor, color: UI.color }}>
                 {
                     header && 
                     <header style= {{ borderBottom: UI.border }}>

@@ -1,13 +1,12 @@
 import CardLayout from "../re-usables/cardLayout"
 import { GlobalState } from "../../context/globalState"
 import UploadImage from '../re-usables/upload_image'
-import { useEffect, useState } from "react"
-import { Form, Button, Dropdown, Icon, Checkbox} from 'semantic-ui-react'
+import { useState } from "react"
+import { Form, Button, Dropdown, Checkbox} from 'semantic-ui-react'
 import styles from './style/add_product.module.css'
 import { GetMultipleImage } from "../../utils/actions/getImage"
 import { useRouter } from "next/router"
 import {businessCategory} from '../../utils/static_files/menu'
-import useSWR from "swr"
 
 
 export default function UpdateProduct ({product}) {
@@ -60,7 +59,7 @@ export default function UpdateProduct ({product}) {
 
 
     return(
-        <CardLayout redirect= {user && product && user?._id !== product?.author?._id} header= 'Update product.' >
+        <CardLayout redirect= {user && product && user?._id !== product?.author?._id} header= 'Update product.' width= '550px' >
             <div className= {styles.create} id= {styles.create}>
 
                 <span className= {styles.create_images}>

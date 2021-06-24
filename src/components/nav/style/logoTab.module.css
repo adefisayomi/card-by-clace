@@ -5,11 +5,10 @@
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    padding: 2px;
-    position: fixed;
+    padding: 4px;
     font-family: 'Roboto';
     cursor: pointer;
-    border: 2px solid rgb(35, 80, 117);
+    border: 2px solid white;
 }
 .logo_loading{
     display: flex;
@@ -19,10 +18,10 @@
 }
 .logo a {
     margin: 0;
-    color: rgb(13, 35, 53);
+    color: rgb(12, 38, 59);
     padding: 0;
     font-weight: 900;
-    font-size: 17px;
+    font-size: 20px;
     text-transform: capitalize;
     font-family: 'Roboto';
 }

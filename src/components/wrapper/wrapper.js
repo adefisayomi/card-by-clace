@@ -55,11 +55,15 @@ export default function wrapper ({children}) {
 
     return (
         
-        <div className= {styles.wrapper} style= {{ color: UI.color }}>
+        <div className= {styles.wrapper} style= {{ color: UI.color, backgroundColor: UI.body }}>
             <Header title= {title} />
             <Alert />
-            { open && <div className= {styles.wrapper_header}> <Nav /> </div>}
-            <div className= {styles.wrapper_main} style= {{ minHeight: !open && '100vh' }}>{children}</div>
+            { open && 
+                <div className= {styles.wrapper_header} style= {{ borderBottom: UI.border }}>
+                    <Nav />
+                </div>
+            }
+            <div className= {styles.wrapper_main} style= {{ minHeight: !open && '50vh' }}>{children}</div>
             { open && <footer><Footer /></footer>}
         </div>
     )

@@ -51,7 +51,7 @@ export default function CreateProduct () {
     }
 
     return(
-        <CardLayout header= 'Create product.' redirect= {!user} >
+        <CardLayout header= 'Create product.' redirect= {!user} width= '550px' >
             <div className= {styles.create} id= {styles.create}>
                 <span className= {styles.create_images}>
                     <UploadImage onChange= {getImages} onDelete= {deleteImage} images= {form?.images} />

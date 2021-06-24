@@ -21,3 +21,20 @@
     font-weight: 700;
     transform: translateY(-4px);
 }
+
+.action_like {
+    display: flex;
+    color: white;
+    margin-right: 12px;
+    font-size: 12px;
+    margin-right: 5px;
+    position: relative;
+    align-items: baseline;
+}
+.action_like > p {
+    color: rgb(204, 204, 204);
+    font-size: 10px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    transform: translate(-8px, 2px);
+}

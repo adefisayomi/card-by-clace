@@ -1,6 +1,6 @@
 .homeCard {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -51,5 +51,10 @@
 @media screen and (max-width: 500px) {
     .homeCard_placeholder {
         width: 400px;
-    }  
+    }
+}
+@media screen and (max-width: 450px) {
+    .homeCard{
+        max-width: 550px;
+    }
 }

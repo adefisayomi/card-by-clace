@@ -39,6 +39,8 @@
   display: flex;
   margin-left: -20px; /* gutter size offset */
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .my_masonry_grid_column {
   padding-left: 20px; /* gutter size */
@@ -53,6 +55,8 @@
   height: auto;
   border-radius: 8px;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -61,5 +65,11 @@
     }
     .my_masonry_grid_column > div {
       margin-bottom: 40px;
+    }
+    .my_masonry_grid {
+      margin-left: -5px; 
+    }
+    .my_masonry_grid_column {
+      padding-left: 5px;
     }
 }

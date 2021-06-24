@@ -1,6 +1,6 @@
 import styles from './style/productCard.module.scss'
 import CardLayout from '../re-usables/cardLayout'
-import CoverSlider from '../slider/coverSlider'
+import Slider from '../slider/slider'
 import { useRouter } from 'next/router'
 import {Icon, Divider} from 'semantic-ui-react'
 import useSWR from 'swr'
@@ -35,7 +35,7 @@ export default function productCard () {
             <div className= {styles.productCard}>
 
                 <div className= {styles.productCard_slider}>
-                    <CoverSlider images= {product?.details?.images} />
+                    <Slider images= {product?.details?.images} />
                 </div>
 
                 <div className= {styles.productCard_action}>

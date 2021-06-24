@@ -5,6 +5,8 @@ import useSWR from 'swr'
 import { GlobalState } from '../../context/globalState';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
+import router from 'next/router'
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 
 
 
@@ -24,6 +26,13 @@ export default function details ({product}) {
 
   return (
       <div className= {styles.action}>
+
+          <span className= {styles.action_like}>
+            <IconButton aria-label="add to favorites"  onClick= {handleLike}>
+                <ThumbUpAltIcon fontSize= 'small' style= {{ color: 'rgb(29, 162, 250)' }}/>
+            </IconButton>
+            <p>{likes?.length || ''}</p>
+          </span>
         
           <span className= {styles.action_cart}>
             <IconButton aria-label="add to favorites" >
@@ -33,8 +42,8 @@ export default function details ({product}) {
           </span>
 
           <span>
-            <IconButton aria-label="view product" >
-                <ViewCarouselIcon style= {{ color: 'rgb(29, 162, 250)' }} />
+            <IconButton aria-label="view product" onClick={() => router.push(`${router.asPath}/${product?._id}`)} >
+                <ArrowForwardIosIcon style= {{ color: 'rgb(29, 162, 250)' }} />
             </IconButton>
           </span>
     </div>

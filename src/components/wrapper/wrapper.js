@@ -59,11 +59,13 @@ export default function wrapper ({children}) {
             <Header title= {title} />
             <Alert />
             { open && 
-                <div className= {styles.wrapper_header} style= {{ borderBottom: UI.border }}>
+                <div className= {styles.wrapper_header} style= {{ borderBottom: UI.border, backgroundColor: UI.dark ? 'rgba(0, 0, 0, 0.788)' : 'rgba(255, 255, 255, 0.788)' }}>
                     <Nav />
                 </div>
             }
-            <div className= {styles.wrapper_main} >{children}</div>
+            <div className= {styles.wrapper_main} >
+                {children}
+            </div>
             { open && <footer><Footer /></footer>}
         </div>
     )

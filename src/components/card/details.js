@@ -11,7 +11,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 
 
 
-export default function details ({product}) {
+export default function details ({product, path}) {
 
   const {UI} = GlobalState()
   const {commentAction, setAlert, user} = GlobalState()
@@ -42,7 +42,7 @@ export default function details ({product}) {
           </span>
 
           <span>
-            <IconButton aria-label="view product" onClick={() => router.push(`${router.asPath}/${product?._id}`)} >
+            <IconButton aria-label="view product" onClick={() => router.push(`${path}`)} >
                 <ArrowForwardIosIcon style= {{ color: 'rgb(29, 162, 250)' }} />
             </IconButton>
           </span>

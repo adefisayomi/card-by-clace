@@ -8,7 +8,7 @@ export default function LogoTab () {
     const {UI, globalLoading} = GlobalState()
 
     return(
-        <div className= {styles.logo} >
+        <div className= {styles.logo} style= {{ borderColor: UI.color }}>
             {globalLoading ? 
                 <span className= {styles.logo_loading}>
                 <Loader active size= 'tiny' />

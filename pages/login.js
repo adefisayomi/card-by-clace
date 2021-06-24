@@ -1,4 +1,3 @@
-import axios from 'axios'
 import Login from '../src/components/account/login'
 
 

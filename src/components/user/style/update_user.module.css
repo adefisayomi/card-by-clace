@@ -99,19 +99,15 @@
     overflow-y: hidden;
 }
 #profile > form button {
-    background: none;
-    border: 2px solid grey;
     border-radius: 3px;
     padding: 10px;
     font-family: 'Roboto';
-    width: 100%;
-    color: inherit;
 }
-#profile > form button:hover {
+/* #profile > form button:hover {
     border: 2px solid var(--bColor);
     background-color: black;
     color: var(--bColor);
-}
+} */
 
 @media screen and (max-width: 500px) {
     #profile > form label {

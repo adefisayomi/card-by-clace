@@ -1,26 +1,3 @@
-// import { Placeholder } from 'semantic-ui-react'
-// import { GlobalState } from '../../context/globalState'
-// import styles from './style/loadingGrid.module.scss'
-
-
-// export default function loadingGrid ({height}) {
-
-//     const {UI} = GlobalState()
-
-//     return (
-//         // <div className= {styles.loading} style= {{ height: height }}>
-//         //     {/* {
-//         //         [1, 2, 3, 4, 5, 6, ].forEach((prod, index) => {
-                    // <Placeholder key= {index} style= {{ height: height }} fluid className= {styles.loading_placeholder} inverted= {UI.dark ? true : false}>
-                    //     <Placeholder.Image />
-                    // </Placeholder>
-//         //         })
-//         //     } */}
-//         // </div>
-
-//     )
-// }
-
 import styles from './style/loadingGrid.module.scss'
 import Masonry from 'react-masonry-css'
 import {Placeholder} from 'semantic-ui-react'
@@ -46,7 +23,7 @@ export default function loadingGrid () {
     const array = pageSize <= 600 ? sizes.slice(0, 1) : sizes
 
         return (
-            <div className= {styles.grid}>
+            <div className= {styles.grid} >
                 <Masonry
                     breakpointCols={breakPoints}
                     className= {styles.my_masonry_grid}

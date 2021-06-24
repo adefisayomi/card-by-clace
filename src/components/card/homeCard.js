@@ -15,7 +15,7 @@ export default function homeCard ({product, height}) {
   return (
       <Fragment>
         {
-          product && product._id && product.details.images && product.details.images[0].url ? 
+          product && product._id && product.details.images && product.details.images[0].url ?
           <div className= {styles.homeCard}>
             <div className= {styles.homeCard_header}>
                 <Header 
@@ -29,7 +29,7 @@ export default function homeCard ({product, height}) {
               <Slider dots= {false} images = {product?.details?.images || ''} height= {height} />
 
             <div className= {styles.homeCard_details}>
-              <Details product= {product} />
+              <Details product= {product} path= {`/${author?.username||author?._id}/${product?._id}`} />
             </div>
           </div> : 
           <Placeholder className= {styles.homeCard_placeholder} style= {{ height: height }}>

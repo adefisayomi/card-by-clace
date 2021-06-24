@@ -15,7 +15,6 @@ export default function checkout () {
   const [loading, setLoading] = useState(false)
   const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
   const getOption = (e, {value}) => setForm({...form, state: value})
-  console.log(form)
 
   const handleSubmit = async (e) => {
       e.preventDefault()
@@ -39,7 +38,7 @@ export default function checkout () {
   }, [cart])
 
   return (
-        <CardLayout redirect= { !cart || cart.length === 0 }>
+        <CardLayout redirect= { !cart || cart.length === 0 } width= '550px'>
           <div className= {styles.checkout}>
             <span className= {styles.checkout_shipping_form}>
               <ShippingForm form= {form} getForm= {getForm} handleSubmit= {handleSubmit} loading= {loading} getOption= {getOption} />

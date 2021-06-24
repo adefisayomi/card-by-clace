@@ -17,22 +17,25 @@ export default function slider ({images, dots= true}) {
   };
 
   return (
-        <div className= {styles.slider} >
+        <div className= {styles.slider_container} >
             <SwipeableViews
+                className= {styles.slider}
                 enableMouseEvents
                 action={actions => setSwipeableActions(actions)}
                 resistance
                 index= {currentSlide}
                 onChangeIndex={handleSlideChange}
-                animateHeight
             >
             {
                 images && images.length > 0 ?
                 images.map((img, index) => (
-                  <div className= {styles.sliders}>
-                    <Image src={img.url || ''} key= {index} />
+
+                  <div className= {styles.slides} key= {index} >
+                    <Image src={img.url || ''} />
                   </div>
+
                 )) :
+
                 <Placeholder fluid className= {styles.slider_placeholder} inverted= {UI.dark ? true : false}>
                   <Placeholder.Image />
                 </Placeholder>

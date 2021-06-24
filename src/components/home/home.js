@@ -2,7 +2,6 @@ import styles from './home.module.scss'
 import useSWR, {useSWRInfinite} from 'swr'
 import Homecard from '../card/homeCard'
 import { GlobalState } from '../../context/globalState'
-import LoadingProduct from '../re-usables/loadingProduct'
 import {useEffect, useState} from 'react'
 import Grid from '../card/grid'
 import LoadingGrid from '../card/loadingGrid'
@@ -11,6 +10,7 @@ import LoadingGrid from '../card/loadingGrid'
 
 export default function home() {
 
+    const {UI} = GlobalState()
 const productPerRequest = 10
 const [count, setCount] = useState(productPerRequest)
 
@@ -49,7 +49,7 @@ useEffect(() => {
 
 
   return (
-      <div className= {styles.home} id= 'home'>
+      <div className= {styles.home} id= 'home' style= {{ color: UI.color, backgroundColor: UI.bgColor }}>
           
                 {
                     products && products.length > 0 ?

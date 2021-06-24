@@ -1,6 +1,6 @@
 import styles from './style/nav.module.scss'
 import { GlobalState } from '../../context/globalState'
-import CardTab from '../cart/cartTab'
+import CartTab from '../cart/cartTab'
 import {Icon} from 'semantic-ui-react'
 import SearchTab from './searchTab'
 import Cart from '../cart/cart'
@@ -31,7 +31,7 @@ export default function nav () {
     }, [router.asPath])
 
     return (
-        <div className= {styles.nav}>
+        <div className= {styles.nav} style= {{ color: UI.color }}>
             <span className= {styles.nav_logo}>
                 <LogoTab />
             </span>
@@ -48,15 +48,12 @@ export default function nav () {
                 <span className={styles.nav_login}>
                     <Icon name= {user ? 'lock open' : 'lock'}
                         circular link style= {{fontSize: '16px'}}
-                        color= 'black' 
                         onClick= {user ? () => userAction.logOut() : () => router.push('/login')}
                     />
                 </span>}
 
             <span className= {styles.nav_theme}>
-                <DropDown trigger= { <CardTab />}>
-                    <Cart />
-                </DropDown> 
+                <DropDown trigger= { <CartTab />} children= {<Cart />}/>
 
                 <ToggleUI />
             </span>
@@ -71,7 +68,7 @@ const ToggleUI = () => {
     return (
         <div style= {{ width: 'fit-content' }}>
             
-            <IconButton onClick= {() => toggleUI({ type: 'TOGGLE_UI' })} aria-label="cart" style= {{ color: 'black' }} color= 'inherit' >
+            <IconButton onClick= {() => toggleUI({ type: 'TOGGLE_UI' })} aria-label="cart" style= {{ color: UI.color }} color= 'inherit' >
                 {
                     UI.dark ? 
                     <Brightness4Icon style= {{ fontSize: '16px' }} /> :

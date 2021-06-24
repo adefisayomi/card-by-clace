@@ -4,7 +4,9 @@
     flex-direction: column;
     align-items: center;
     height: auto;
-    
+    max-height: inherit;
+    position: relative;
+    overflow: hidden;
     // position: relative;
 
     .sliders {
@@ -13,12 +15,14 @@
       position: relative;
       width: 100%;
       height: auto;
+      max-height: inherit;
       overflow: hidden;
 
       img {
         width: 100%;
         max-width: 100%;
-        display: flex;
+        display: block;
+        position: relative;
         height: auto;
         object-fit: contain;
       }

@@ -1,30 +1,31 @@
-.slider {
-    border-radius: 0;
+.slider_container {
+  width: 100%;
+  min-width: inherit;
+  max-width: inherit;
+  height: auto;
+
+  .slider {
+    display: flex;
     width: 100%;
     height: auto;
-    min-height: auto;
-    // max-height: 70vh;
-    // min-height: 450px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
 
-    .sliders {
-        display: flex;
-        justify-content: center;
-        background-image: url('https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        // min-height: 450px;
+    .slides {
+      width: 100%;
+      background-image: url('https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      // min-height: 400px;
 
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain !important;
-          }
+      img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        height: auto;
+        object-fit: contain !important;
+      }
     }
+  }
 }
     
   .dots {

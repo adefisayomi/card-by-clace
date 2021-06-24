@@ -1,7 +1,6 @@
 
 .cart_tab {
     display: flex;
-    color: white;
     margin-right: 12px;
     width: fit-content;
     font-size: 12px;
@@ -9,7 +8,6 @@
     align-items: baseline;
 }
 .cart_tab > p {
-    color: white;
     font-size: 10px;
     cursor: pointer;
     position: absolute;

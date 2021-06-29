@@ -31,15 +31,12 @@
     .search_tab{
         width: fit-content;
         max-width: 120px;
+        display: none;
     }
   .search_tab > input {
     flex: 1 1 ;
     max-width: 120px;
     font-size: 12px;
     padding: 10px;
-} 
-/* .search_tab_icon {
-    display: none;
-} */
-
+  } 
 }

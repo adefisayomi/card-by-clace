@@ -15,7 +15,7 @@ export default function grids ({children}) {
     }
 
         return (
-            <div className= {styles.grid} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+            <div className= {styles.grid}>
                 <Masonry
                     breakpointCols={breakPoints}
                     className= {styles.my_masonry_grid}

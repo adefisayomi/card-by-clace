@@ -32,18 +32,18 @@ export default function productCard () {
 
     return (
         <CardLayout header= {product?.details?.title || ''} width= '550px' >
-            <div className= {styles.productCard} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+            <div className= {styles.productCard} style= {{ color: UI.color, backgroundColor: UI.bgColor}}>
 
-                <div className= {styles.productCard_slider}>
+                <div className= {styles.productCard_slider} >
                     <Slider images= {product?.details?.images} />
                 </div>
 
-                <div className= {styles.productCard_action}>
+                <div className= {styles.productCard_action} >
                     <span>
                         <Action handleExpandClick= {handleExpandClick} expanded= {expanded} product= {product}  />
                     </span>
 
-                    <span>
+                    <span >
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                             <Divider />
                             <div className= {styles.product_order_form}>

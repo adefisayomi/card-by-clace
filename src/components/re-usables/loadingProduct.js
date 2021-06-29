@@ -10,7 +10,7 @@ export default function LoadingUser ({reverse, width}) {
 
     return (
         <CardLayout width= {width}>
-            <div className= {styles.loading}  style= {{ flexDirection: reverse && 'column-reverse', backgroundColor: UI.bgColor }}>
+            <div className= {styles.loading}  style= {{ flexDirection: reverse && 'column-reverse'}}>
                 <header>
                     <Placeholder className= {styles.profile} inverted= {UI.dark}>
                         <Placeholder.Image />

@@ -31,7 +31,7 @@ export default ({form, product, getColor, getSize, getForm}) => {
                 </span>
                 {
                     size && size.length > 0 &&
-                    <span>
+                    <span style= {{ padding: '0 5px' }}>
                         <label htmlFor="size">size</label>
                         <Dropdown 
                             id= {styles.options_dropdown} 

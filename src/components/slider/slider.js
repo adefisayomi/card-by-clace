@@ -1,12 +1,14 @@
 import styles from './slider.module.scss'
 import {useState} from 'react';
 import SwipeableViews from 'react-swipeable-views';
+import { GlobalState } from '../../context/globalState';
 
 
 export default function slider ({images, dots= true, height, animateHeight= true, borderRadius}) {
 
   const [swipeableActions, setSwipeableActions] = useState();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const {UI} = GlobalState()
 
   const handleSlideChange = (step) => {
     setCurrentSlide(step);
@@ -22,6 +24,7 @@ export default function slider ({images, dots= true, height, animateHeight= true
                 onChangeIndex={handleSlideChange}
                 animateHeight= {animateHeight}
                 id= {styles.slides}
+                style= {{ backgroundColor: UI.bgColor }}
             >
               {
                 images && images.length > 0 && 

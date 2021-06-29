@@ -17,7 +17,7 @@ export default function homeCard ({product, height}) {
       <CardLayout borderRadius= '10px' width= '450px'>
         {
           product && product._id && product.details.images && product.details.images[0].url ?
-          <div className= {styles.homeCard} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+          <div className= {styles.homeCard}>
             <div className= {styles.homeCard_header}>
                 <Header 
                     header= {{ title: product?.details?.title, subheader: product?.details?.category }}

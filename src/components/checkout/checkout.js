@@ -22,7 +22,7 @@ export default function checkout ({children}) {
   const stages = ['Shipping details', 'Billing', 'Validate order']
   const router = useRouter()
   const {UI, cart, setAlert, checkoutAction, user} = GlobalState()
-  const [form, setForm] = useState({name: '', email: '', address: {}, phone: ''})
+  const [form, setForm] = useState({name: '', email: '', address: {}, phone: '', cart: cart})
   const [loading, setLoading] = useState(false)
   const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
   const getAddress = (e) => setForm({...form, address: {...form.address, [e.target.name]: e.target.value}})

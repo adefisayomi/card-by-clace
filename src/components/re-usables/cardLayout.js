@@ -22,20 +22,21 @@ export default function CardLayout ({children, redirect, header, width, borderRa
     }, [redirect])
 
     return (
-            <Card variant= {!UI.dark && 'outlined'}  
-                  className= {styles.layout}
-                  style= {{ maxWidth: width, backgroundColor: UI.bgColor, color: UI.color, borderRadius: borderRadius }}
+            <Card 
+                variant= {!UI.dark && 'outlined'}
+                className= {styles.layout}
+                style= {{ maxWidth: width, backgroundColor: UI.bgColor, color: UI.color, borderRadius: borderRadius, border: 'none' }}
             >
                 {
                     header && 
-                    <header style= {{ borderBottom: UI.border }}>
+                    <header style= {{ borderBottom: UI.border , backgroundColor: UI.bgColor, color: UI.color,}}>
                         <h1>{header}</h1>
                         <span className= {styles.product_cancel}>
                             <Icon name= 'cancel' link onClick= {() => router.back()} />
                         </span>
                     </header>
                 }
-                <CardMedia style= {{ width: '100%' }}> {children} </CardMedia>
+                <div style= {{ width: '100%', backgroundColor: UI.bgColor, color: UI.color }}> {children} </div>
             </Card>
     )
 }

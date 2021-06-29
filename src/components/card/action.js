@@ -40,7 +40,7 @@ export default function Action ({handleExpandClick, expanded, product}) {
   }
 
   return (
-      <div className= {styles.action} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+      <div className= {styles.action} style= {{ color: UI.color}}>
         <div className= {styles.action_options}>
             {
               !expanded &&

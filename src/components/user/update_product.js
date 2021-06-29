@@ -64,7 +64,7 @@ export default function UpdateProduct () {
 
     return(
         <CardLayout redirect= {user && product && user?._id !== product?.author?._id} header= 'Update product.' width= '550px' >
-            <div className= {styles.create} id= {styles.create} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+            <div className= {styles.create} id= {styles.create} style= {{ color: UI.color}}>
 
                 <span className= {styles.create_images}>
                     <UploadImage onChange= {getImages} onDelete= {deleteImage} images= {form?.images} />

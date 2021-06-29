@@ -10,7 +10,7 @@ export default function ShippingForm ({form, getForm, getAddress, getOption}) {
     const {UI} = GlobalState()
 
     return (
-        <Form id= {styles.shipping_form} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+        <Form id= {styles.shipping_form} >
 
             <Form.Field>
                 <label htmlFor="email">Email</label>

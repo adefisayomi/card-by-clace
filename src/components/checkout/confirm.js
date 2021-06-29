@@ -38,7 +38,7 @@ export default function ConfirmOrder ({amount}) {
 
     return (
       <Checkout>
-      <div className= {styles.confirm} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+      <div className= {styles.confirm} style= {{ color: UI.color }}>
           <span className= {styles.confirm_loader}>
             <Loader indeterminate active content= 'validating transaction...' />
           </span>

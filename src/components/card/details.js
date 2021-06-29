@@ -25,7 +25,7 @@ export default function details ({product, path}) {
   }
 
   return (
-      <div className= {styles.action} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+      <div className= {styles.action}>
 
           <span className= {styles.action_like}>
             <IconButton aria-label="add to favorites"  onClick= {handleLike}>

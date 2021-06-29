@@ -49,7 +49,7 @@ useEffect(() => {
 
 
   return (
-      <div className= {styles.home} id= 'home' style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+      <div className= {styles.home} id= 'home'>
           
                 {
                     products && products.length > 0 ?

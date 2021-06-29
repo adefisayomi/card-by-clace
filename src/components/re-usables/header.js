@@ -15,7 +15,7 @@ export default function Header({ user,  header= {},  icon = {}, width= '40px', p
   const {UI} = GlobalState()
 
     return (
-      <div className= {styles.header} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
+      <div className= {styles.header}>
 
         <div className= {styles.header_details}>
           <span> <ProfileTab user= {user || ''} width= {width} /> </span>

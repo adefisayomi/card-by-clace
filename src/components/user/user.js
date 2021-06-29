@@ -34,7 +34,7 @@ export default function User () {
         <CardLayout width= '600px' >
             {
                 currentUser && currenUserProducts ?
-                <div className= {styles.user} style= {{ backgroundColor: UI.bgColor, color: UI.color}} >
+                <div className= {styles.user} style= {{ color: UI.color}} >
                     <div className= {styles.user_header}  style= {{ borderBottom: UI.border, backgroundColor: UI.bgColor}} >
                         <Header
                             user= {currentUser}

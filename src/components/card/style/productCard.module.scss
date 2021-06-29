@@ -11,10 +11,18 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        padding: 20px;
+        background-color: transparent;
 
         span {
             width: 100%;
+            background: none;
         }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .productCard_action{
+        padding: 10px;
     }
 }

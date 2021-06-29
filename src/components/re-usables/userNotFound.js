@@ -11,7 +11,7 @@ export default function UserNotFound ({width}) {
     const {UI} = GlobalState()
 
     return (
-        <div className= {styles.loading} style= {{ maxWidth: {width}, backgroundColor: UI.bgColor }}>
+        <div className= {styles.loading} style= {{ maxWidth: width, backgroundColor: UI.bgColor }}>
             <header>
                 <span><Icon name= 'question' color= 'blue' circular size= 'big' /></span>
                 <span><Icon name= 'angle double left' color= 'blue' size= 'large' link onClick= {() => router.back()} /></span>

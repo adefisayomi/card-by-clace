@@ -51,7 +51,7 @@ export default function update () {
 
     return(
         <CardLayout redirect= {!user} width= '550px' >
-                <div className= {styles.profile} id = {styles.profile} style= {{ color: UI.color }}>
+                <div className= {styles.profile} id = {styles.profile} style= {{ color: UI.color, backgroundColor: UI.bgColor }}>
                     <header style= {{ borderBottom: UI.border }}>
                     <UploadProfilePicture 
                         text= {form.username || form.first_name || ''}
@@ -189,6 +189,8 @@ export default function update () {
                             type= 'submit'
                             content= {loading ? 'Updating...' : 'Update' }
                             color= 'blue'
+                            style= {{ width: 'fit-content' }}
+                            floated= 'left'
                             icon= {loading && { name: 'spinner', loading: true }}
                         />
                     </Form>

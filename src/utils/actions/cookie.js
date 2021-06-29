@@ -1,10 +1,11 @@
 
+
 const set = (cname, cvalue, exhour= 1260) => {
     if (typeof window !== 'undefined') {
         const d = new Date();
         d.setTime(d.getTime() + (exhour * 60 * 60 * 1000));
         let expires = "expires="+d.toUTCString();
-        document.cookie = cname + "=" + JSON.stringify(cvalue) + ";" + expires + ";path=/";
+        document.cookie = cname + "=" + JSON.stringify(cvalue) + ";" + expires + ";path=/;" + "SameSite=None; Secure";
     }
     
   }

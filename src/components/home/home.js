@@ -10,7 +10,7 @@ import LoadingGrid from '../card/loadingGrid'
 
 export default function home() {
 
-    const {UI} = GlobalState()
+const {UI} = GlobalState()
 const productPerRequest = 10
 const [count, setCount] = useState(productPerRequest)
 
@@ -49,7 +49,7 @@ useEffect(() => {
 
 
   return (
-      <div className= {styles.home} id= 'home'>
+      <div className= {styles.home} id= 'home' style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
           
                 {
                     products && products.length > 0 ?

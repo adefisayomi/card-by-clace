@@ -19,7 +19,7 @@ export default function ProfileTab ({width, user, border}) {
                 <Image src= {user.image?.url || ''} alt= 'profile-picture' /> : 
                 user && user.username || user.first_name ? 
                 <h1> {user?.username ? user.username[0] : user?.first_name ? user?.first_name[0] : ''} </h1> :
-                <h1> C</h1>
+                <h1> C </h1>
             }
             
         </div>

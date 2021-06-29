@@ -1,8 +1,11 @@
 import styles from './style/grid.module.scss'
 import Masonry from 'react-masonry-css'
+import { GlobalState } from '../../context/globalState'
 
 
 export default function grids ({children}) {
+
+    const {UI} = GlobalState()
 
     const breakPoints = {
         default: 4,
@@ -12,7 +15,7 @@ export default function grids ({children}) {
     }
 
         return (
-            <div className= {styles.grid}>
+            <div className= {styles.grid} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
                 <Masonry
                     breakpointCols={breakPoints}
                     className= {styles.my_masonry_grid}

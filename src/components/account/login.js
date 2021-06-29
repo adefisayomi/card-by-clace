@@ -30,7 +30,7 @@ export default function login () {
    
     return(
         <CardLayout header= 'Card by clace' redirect= {user} width= '500px'>
-            <div className= {styles.login}>
+            <div className= {styles.login} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
                  <div className= {styles.login_container}>
                     <div className= {styles.login_options}>
                         <Form className= {styles.login_google} style= {{ transform: useGoogle && `translateX(0%)`, position: !useGoogle && 'absolute' }}>

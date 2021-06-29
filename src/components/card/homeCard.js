@@ -10,13 +10,14 @@ import { GlobalState } from '../../context/globalState'
 
 export default function homeCard ({product, height}) {
 
+  const {UI} = GlobalState()
   const {data: author} = useSWR(() => product ? `/user/${product.author._id}` : '', {revalidateOnFocus: true})
 
   return (
       <CardLayout borderRadius= '10px' width= '450px'>
         {
           product && product._id && product.details.images && product.details.images[0].url ?
-          <div className= {styles.homeCard}>
+          <div className= {styles.homeCard} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
             <div className= {styles.homeCard_header}>
                 <Header 
                     header= {{ title: product?.details?.title, subheader: product?.details?.category }}
@@ -26,7 +27,7 @@ export default function homeCard ({product, height}) {
                 />
             </div>
 
-              <Slider dots= {false} images = {product?.details?.images || ''} height= {height} />
+              <Slider borderRadius= '10px' dots= {false} images = {product?.details?.images || ''} height= {height} />
 
             <div className= {styles.homeCard_details}>
               <Details product= {product} path= {`/${author?.username||author?._id}/${product?._id}`} />

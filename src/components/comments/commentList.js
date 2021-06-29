@@ -16,7 +16,7 @@ export default function CommentList ({comment, product}) {
     }
 
     return (
-        <div className= {styles.comment_list}>
+        <div className= {styles.comment_list} >
             { commentUser && comment ?
             <>
             <div className= {styles.comment_list_image}>

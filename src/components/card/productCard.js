@@ -32,7 +32,7 @@ export default function productCard () {
 
     return (
         <CardLayout header= {product?.details?.title || ''} width= '550px' >
-            <div className= {styles.productCard}>
+            <div className= {styles.productCard} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
 
                 <div className= {styles.productCard_slider}>
                     <Slider images= {product?.details?.images} />

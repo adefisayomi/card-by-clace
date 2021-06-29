@@ -12,7 +12,7 @@ const UploadProfilePicture = memo(({onChange, image, text , onDelete, width}) =>
               { image ? 
                     <img src= { image && image.name ? URL.createObjectURL(image) : image && image.url ? image.url : '' } alt=""/>
                     :
-                <h1>{text ? text[0] : 'nora'}</h1>}
+                <h1>{text ? text[0] : 'card'}</h1>}
             </div>
             { image && onDelete &&
              <div className= {styles.upload_profile_picture_delete}>

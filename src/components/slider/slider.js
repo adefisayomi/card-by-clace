@@ -3,7 +3,7 @@ import {useState} from 'react';
 import SwipeableViews from 'react-swipeable-views';
 
 
-export default function slider ({images, dots= true, height, animateHeight= true}) {
+export default function slider ({images, dots= true, height, animateHeight= true, borderRadius}) {
 
   const [swipeableActions, setSwipeableActions] = useState();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,7 +25,7 @@ export default function slider ({images, dots= true, height, animateHeight= true
             >
               {
                 images && images.length > 0 && 
-                images.map((img, index) => <img src={img.url || ''} key= {index} style= {{ minHeight: height }} /> ) 
+                images.map((img, index) => <img src={img.url || ''} key= {index} style= {{ minHeight: height, borderRadius: borderRadius }} /> ) 
               }
             </SwipeableViews>
 

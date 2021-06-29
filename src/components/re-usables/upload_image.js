@@ -9,7 +9,7 @@ const Upload = memo(({onDelete, onChange, images, hide}) => {
     const {UI} = GlobalState()
 
     return(
-        <div className= {styles.upload} >
+        <div className= {styles.upload} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
            {images && images.map((image, index) => (
                <span className= {styles.upload_image} key= {index}>
                     <img src= { image.url ? image.url : image.name ? URL.createObjectURL(image) : '' } encType="multipart/form-data"  alt="" />

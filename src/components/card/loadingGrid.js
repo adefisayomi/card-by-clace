@@ -23,7 +23,7 @@ export default function loadingGrid () {
     const array = pageSize <= 600 ? sizes.slice(0, 1) : sizes
 
         return (
-            <div className= {styles.grid} >
+            <div className= {styles.grid} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
                 <Masonry
                     breakpointCols={breakPoints}
                     className= {styles.my_masonry_grid}

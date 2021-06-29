@@ -29,14 +29,13 @@ export default function User () {
         }
         return null
     }, { revalidateOnFocus: true})
-console.log(currentUser)
 
     return(
         <CardLayout width= '600px' >
             {
                 currentUser && currenUserProducts ?
-                <div className= {styles.user}>
-                    <div className= {styles.user_header}  style= {{ borderBottom: UI.border}} >
+                <div className= {styles.user} style= {{ backgroundColor: UI.bgColor, color: UI.color}} >
+                    <div className= {styles.user_header}  style= {{ borderBottom: UI.border, backgroundColor: UI.bgColor}} >
                         <Header
                             user= {currentUser}
                             header= {{ title: `@ ${currentUser.username}` || '', 

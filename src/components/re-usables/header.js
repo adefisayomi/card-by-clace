@@ -6,14 +6,16 @@ import EditIcon from '@material-ui/icons/Edit';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import styles from './style/header.module.css'
 import { useRouter } from 'next/router';
+import { GlobalState } from '../../context/globalState';
 
 
 export default function Header({ user,  header= {},  icon = {}, width= '40px', path= {}}) {
 
   const router = useRouter()
+  const {UI} = GlobalState()
 
     return (
-      <div className= {styles.header}>
+      <div className= {styles.header} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
 
         <div className= {styles.header_details}>
           <span> <ProfileTab user= {user || ''} width= {width} /> </span>

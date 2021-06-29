@@ -15,7 +15,7 @@ import {useRouter} from 'next/router'
 export default function wrapper ({children}) {
 
     const router = useRouter()
-    const {UI, user, setTrigger, trigger, globalLoading, setGlobalLoading} = GlobalState()
+    const {UI, user, setGlobalLoading} = GlobalState()
     const [open, setOpen] = useState(true)
     const title = router.asPath.split('/').pop().replace('/', '|').replace('[', '').replace(']', '')
     const forbidenPath = ['login', 'signup']
@@ -59,7 +59,7 @@ export default function wrapper ({children}) {
             <Header title= {title} />
             <Alert />
             { open && 
-                <div className= {styles.wrapper_header} style= {{ borderBottom: UI.border, backgroundColor: UI.dark ? 'rgba(0, 0, 0, 0.788)' : 'rgba(255, 255, 255, 0.788)' }}>
+                <div className= {styles.wrapper_header} style= {{ borderBottom: UI.border, backgroundColor: UI.body }}>
                     <Nav />
                 </div>
             }

@@ -15,7 +15,7 @@ export default function gallery ({products}) {
 
 
     return(
-        <div className= {styles.gallery}>
+        <div className= {styles.gallery} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
 
             {products && products.length > 0 && 
 

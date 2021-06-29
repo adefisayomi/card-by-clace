@@ -10,7 +10,7 @@ export default function footer ({content= {}}) {
     
     return (
 
-        <div  className= {styles.footer} style= {{ borderTop: UI.border}} >
+        <div  className= {styles.footer} style= {{ borderTop: UI.border, backgroundColor: UI.bgColor}} >
                 <span>
                     <span><Icon name= 'linkify' color= 'blue' link/></span> 
                     

@@ -60,7 +60,7 @@ export default function checkout ({children}) {
 
   return (
     <CardLayout redirect= { !cart || cart.length === 0 } width= '550px' header= 'Checkout'>
-    <div className={styles.checkout}>
+    <div className={styles.checkout} style= {{color: UI.color}}>
       <Stepper id= {styles.stepper} activeStep={activeStep} orientation="vertical" style= {{ backgroundColor: UI.bgColor, color: UI.color  }}>
 
         {

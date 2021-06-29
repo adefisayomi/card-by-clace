@@ -26,7 +26,7 @@ export default function orderForm ({product}) {
   } 
 
     return (
-        <div className= {styles.order_form} style= {{ color: UI.color }}>
+        <div className= {styles.order_form} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
             <Form>
                 <span>
                     <h1>{product?.details?.title}</h1> <em>{product?.details?.quantity} left in stock.</em>

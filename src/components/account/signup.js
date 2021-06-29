@@ -30,7 +30,7 @@ export default function signup () {
 
     return(
         <CardLayout  header= 'Card by clace' redirect= {user} width= '500px'>
-            <div className= {styles.signup} style= {{ color: UI.color }}>
+            <div className= {styles.signup} style= {{ backgroundColor: UI.bgColor, color: UI.color}}>
                 <div className= {styles.signup_container}>
                     <div className= {styles.signup_options}>
                         <Form className= {styles.signup_google} style= {{ transform: useGoogle && `translateX(0%)`, position: !useGoogle && 'absolute' }}>

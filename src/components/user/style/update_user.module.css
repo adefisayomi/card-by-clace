@@ -28,7 +28,7 @@
 .social_media_list{
     display: flex;
     align-items: center;
-    width: fit-content;
+    width: 100%;
     cursor: pointer;
     padding: 5px;
 }
@@ -43,7 +43,8 @@
 .social_media_list > a {
     font-weight: 400;
     font-size: 11px;
-    padding-left: 5px;
+    padding-left: 10px;
+    flex: 1 1;
     font-family: 'Roboto';
 }
 #profile > form > h1 {

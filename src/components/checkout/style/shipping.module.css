@@ -14,9 +14,9 @@
 }
 #shipping_form label {
     display: flex;
-    margin-top: 4px;
+    margin-top: 2px;
     align-items: center;
-    text-transform: lowercase;
+    text-transform: capitalize;
     color: inherit;
 }
 #shipping_form input {
@@ -56,20 +56,4 @@
     outline: none;
     color: inherit;
     font-size: 12px;  
-}
-/* Stepper */
-/* #stepper {
-    padding: 20px 0 20px 10px;
-}
-#stepper_content {
-    padding: 10px;
-} */
-#stepper h1 {
-    margin: 0;
-    padding: 0;
-    color: inherit;
-    font-family: 'Roboto';
-    font-weight: 700;
-    text-transform: capitalize;
-    font-size: 13px;
 }

@@ -4,9 +4,10 @@ import router from 'next/router'
 import {Icon} from 'semantic-ui-react'
 import { useEffect } from 'react'
 import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
 
 
-export default function CardLayout ({children, redirect, header, width}) {
+export default function CardLayout ({children, redirect, header, width, borderRadius}) {
 
     const {UI} = GlobalState()
     
@@ -21,7 +22,10 @@ export default function CardLayout ({children, redirect, header, width}) {
     }, [redirect])
 
     return (
-            <Card variant= {!UI.dark && 'outlined'}  className= {styles.layout} style= {{ maxWidth: width, backgroundColor: UI.bgColor, color: UI.color }}>
+            <Card variant= {!UI.dark && 'outlined'}  
+                  className= {styles.layout}
+                  style= {{ maxWidth: width, backgroundColor: UI.bgColor, color: UI.color, borderRadius: borderRadius }}
+            >
                 {
                     header && 
                     <header style= {{ borderBottom: UI.border }}>
@@ -31,8 +35,7 @@ export default function CardLayout ({children, redirect, header, width}) {
                         </span>
                     </header>
                 }
-                
-                {children}
+                <CardMedia style= {{ width: '100%' }}> {children} </CardMedia>
             </Card>
     )
 }

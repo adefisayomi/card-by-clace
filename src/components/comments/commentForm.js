@@ -20,7 +20,7 @@ export default function CommentForm ({product}) {
     }
 
     return (
-        <div className= {styles.comment_form} style= {{ border: UI.border }}>
+        <div className= {styles.comment_form} style= {{ backgroundColor: UI.body, border: UI.border}}>
         <textarea
           onChange= {getComment}
           value= {comment || ''}

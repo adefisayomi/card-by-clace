@@ -29,7 +29,7 @@ export default function User () {
         }
         return null
     }, { revalidateOnFocus: true})
-
+console.log(currentUser)
 
     return(
         <CardLayout width= '600px' >
@@ -37,7 +37,7 @@ export default function User () {
                 currentUser && currenUserProducts ?
                 <div className= {styles.user}>
                     <div className= {styles.user_header}  style= {{ borderBottom: UI.border}} >
-                        <Header 
+                        <Header
                             user= {currentUser}
                             header= {{ title: `@ ${currentUser.username}` || '', 
                             subheader: `${currentUser?.first_name || ''}  ${currentUser?.last_name?.join(' ') || '' }` || '' }}

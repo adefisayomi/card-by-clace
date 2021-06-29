@@ -3,17 +3,17 @@ import Slider from '../slider/slider'
 import Details from './details'
 import Header from '../re-usables/header'
 import useSWR from 'swr'
-import { Fragment } from 'react'
+import CardLayout from '../re-usables/cardLayout'
 import {Placeholder} from 'semantic-ui-react'
+import { GlobalState } from '../../context/globalState'
 
 
 export default function homeCard ({product, height}) {
 
-
   const {data: author} = useSWR(() => product ? `/user/${product.author._id}` : '', {revalidateOnFocus: true})
 
   return (
-      <Fragment>
+      <CardLayout borderRadius= '10px' width= '450px'>
         {
           product && product._id && product.details.images && product.details.images[0].url ?
           <div className= {styles.homeCard}>
@@ -36,7 +36,6 @@ export default function homeCard ({product, height}) {
             <Placeholder.Image />
           </Placeholder>
         }
-      
-      </Fragment>
+      </CardLayout>
   )
 }

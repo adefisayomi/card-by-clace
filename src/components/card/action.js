@@ -1,5 +1,5 @@
 import IconButton from '@material-ui/core/IconButton';
-import styles from './style/action.module.css'
+import styles from './style/action.module.scss'
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
@@ -41,54 +41,54 @@ export default function Action ({handleExpandClick, expanded, product}) {
 
   return (
       <div className= {styles.action}>
-        
-        {
-          !expanded &&
-          <span className= {styles.action_cart}>
-            <IconButton aria-label="add to favorites" >
-                <ShoppingCartIcon fontSize= 'small'style= {{ color: UI.color }} />
-            </IconButton>
-            <p>₦ {product?.details?.price}</p>
-          </span>
-        }
-        
-
-        { expanded && likes &&
-          <><span className= {styles.action_like}>
-            <IconButton aria-label="add to favorites">
-                <FeedbackIcon fontSize= 'small' style= {{ color: UI.color }} />
-            </IconButton>
-            <p>{product?.meta?.comments?.length || ''}</p>
-          </span>
-
-          <span className= {styles.action_like}>
-            <IconButton onClick= {handleLike} aria-label="add to favorites" color= 'inherit'>
-                <ThumbUpIcon fontSize= 'small'/>
-            </IconButton>
-            <p>{likes.length || ''}</p>
-          </span>
+        <div className= {styles.action_options}>
+            {
+              !expanded &&
+              <span className= {styles.action_cart}>
+                <IconButton aria-label="add to favorites" >
+                    <ShoppingCartIcon fontSize= 'small'style= {{ color: UI.color }} />
+                </IconButton>
+                <p>₦ {product?.details?.price}</p>
+              </span>
+            }
           
-          <span className= { styles.action_share}>
-            <IconButton aria-label="share" color= 'inherit'>
-                <ShareIcon fontSize= 'small' />
-            </IconButton>
-          </span></>
-        }
 
+            { expanded && likes &&
+              <><span className= {styles.action_like}>
+                <IconButton aria-label="add to favorites">
+                    <FeedbackIcon fontSize= 'small' style= {{ color: UI.color }} />
+                </IconButton>
+                <p>{product?.meta?.comments?.length || ''}</p>
+              </span>
 
-        <span className= { styles.action_expand}>
+              <span className= {styles.action_like}>
+                <IconButton onClick= {handleLike} aria-label="add to favorites" color= 'inherit'>
+                    <ThumbUpIcon fontSize= 'small'/>
+                </IconButton>
+                <p>{likes.length || ''}</p>
+              </span>
+              
+              <span className= { styles.action_share}>
+                <IconButton aria-label="share" color= 'inherit'>
+                    <ShareIcon fontSize= 'small' />
+                </IconButton>
+              </span></>
+            }
+        </div>
+
+        <div className= {styles.action_dropdown}>
           <IconButton
-            color= 'inherit'
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-        </IconButton>
-        </span>
+              color= 'inherit'
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMoreIcon />
+          </IconButton>
+        </div>
     </div>
   );
 }

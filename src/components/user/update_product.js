@@ -7,11 +7,17 @@ import styles from './style/add_product.module.css'
 import { GetMultipleImage } from "../../utils/actions/getImage"
 import { useRouter } from "next/router"
 import {businessCategory} from '../../utils/static_files/menu'
+import useSWR from "swr"
 
 
-export default function UpdateProduct ({product}) {
+export default function UpdateProduct () {
     
     const router = useRouter()
+    // -------------------------------
+    const {data:product} = useSWR(() =>  (
+        router.query.user && router.query.product ? `/products/${router.query.user}/${router.query.product}` : ''
+    ), { revalidateOnFocus: true })
+    // ------------------------------
     const {productAction, setAlert, UI, user} = GlobalState()
     const [form, setForm] = useState({...product?.details})
     const [loading, setLoading] = useState(false)
@@ -23,11 +29,9 @@ export default function UpdateProduct ({product}) {
     const [showOption, setShowOptions] = useState({size: true, color: true})
     const toggleSize = () => {
         setShowOptions({...showOption, size: !showOption.size})
-        // setForm({...form, options: {...form.options, size: []}})
     }
     const toggleColor = () => {
         setShowOptions({...showOption, color: !showOption.color})
-        // setForm({...form, options: {...form.options, color: []}})
     }
     // ------------------------------------------------------------
 
@@ -80,7 +84,7 @@ export default function UpdateProduct ({product}) {
                             value= {form.category || ''}
                             options= {businessCategory || []}
                             onChange= {getCategory}
-                            style= {{ border: UI.border }}
+                            style= {{border: UI.border, backgroundColor: UI.body}}
                             id= {styles.add_product_dropdown}
                         />
                     </Form.Field>
@@ -93,7 +97,7 @@ export default function UpdateProduct ({product}) {
                             type= 'text'
                             value= {form.title || ''}
                             onChange= {getForm}
-                            style= {{ border: UI.border }}
+                            style= {{border: UI.border, backgroundColor: UI.body}}
                         />
                     </Form.Field> 
 
@@ -106,7 +110,7 @@ export default function UpdateProduct ({product}) {
                                     type= 'number'
                                     value= {form.price || ''}
                                     onChange= {getForm}
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                 />
                             </Form.Field>
                             <Form.Field>
@@ -119,7 +123,7 @@ export default function UpdateProduct ({product}) {
                                     type= 'number'
                                     value= {form.quantity || ''}
                                     onChange= {getForm}
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                 />
                             </Form.Field> 
                         </Form.Group>
@@ -145,7 +149,7 @@ export default function UpdateProduct ({product}) {
                                         size -- 
                                         <input
                                             value= {form?.options?.size || ''}
-                                            style= {{ border: UI.border }}
+                                            style= {{border: UI.border, backgroundColor: UI.body}}
                                             type="text" name="size" id="size"
                                             placeholder= 'seperate values with a comma'
                                             onChange = {getOptions}
@@ -157,7 +161,7 @@ export default function UpdateProduct ({product}) {
                                         color -- 
                                         <input 
                                             value= {form?.options?.color || ''}
-                                            style= {{ border: UI.border }}
+                                            style= {{border: UI.border, backgroundColor: UI.body}}
                                             type="text" name="color" id="color"
                                             placeholder= 'seperate values with a comma'
                                             onChange = {getOptions}
@@ -173,7 +177,7 @@ export default function UpdateProduct ({product}) {
                                 name= 'description'
                                 value= {form.description || ''}
                                 onChange= {getForm}
-                                style= {{ border: UI.border }}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                             />
                         </Form.Field>
                         <span style= {{width: '100%', display: 'flex', justifyContent: 'space-between'}}>

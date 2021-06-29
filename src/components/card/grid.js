@@ -6,8 +6,8 @@ export default function grids ({children}) {
 
     const breakPoints = {
         default: 4,
-        1100: 3,
-        750: 2,
+        1200: 3,
+        900: 2,
         600: 1
     }
 

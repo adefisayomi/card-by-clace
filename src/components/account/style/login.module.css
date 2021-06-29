@@ -64,12 +64,14 @@
 .login_toggle{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 20px 0;
 }
 .login_toggle > label {
     font-family: 'Roboto';
     font-weight: 500;
+    width: fit-content;
     padding-left: 10px;
     font-size: 12px;
     text-transform: capitalize;

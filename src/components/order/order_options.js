@@ -1,21 +1,19 @@
-import { Icon, Dropdown, Select } from 'semantic-ui-react'
+import {  Dropdown } from 'semantic-ui-react'
 import { GlobalState } from '../../context/globalState'
 import styles from './style/order_options.module.css'
 
 
 
-export default ({form, setForm, product}) => {
+export default ({form, product, getColor, getSize, getForm}) => {
 
     const {UI} = GlobalState()
 
     const size = returnOption(product?.details?.options?.size)
     const color = returnOption(product?.details?.options?.color)
-    const getColor = (e, {value}) => setForm({...form, options: {...form?.options, color: value}})
-    const getSize = (e, {value}) => setForm({...form, options: {...form?.options, size: value}})
 
 
     return (
-        <div className= {styles.options}>
+        <div className= {styles.options} style= {{ color: UI.color }}>
 
                 <span className= {styles.options_input}>
                     <label htmlFor="quantity">quantity</label>
@@ -23,21 +21,21 @@ export default ({form, setForm, product}) => {
                         name= 'quantity'
                         type="number"
                         min= '1'
-                        max= '20'
-                        onChange= {(e) => setForm({...form, [e.target.name]: e.target.value})}
+                        max= '50'
+                        onChange= {getForm}
                         id= {styles.options_dropdown}
-                        placeholder= {form.quantity || 'quantity'}
-                        style= {{ border: UI.border, width: '100%' }}
+                        placeholder= 'quantity...'
+                        style= {{ border: UI.border, width: '100%', backgroundColor: UI.body }}
                         value= {form.quantity || ''}
                     />
                 </span>
                 {
                     size && size.length > 0 &&
-                    <span style= {{ margin: '0 5px' }}>
+                    <span>
                         <label htmlFor="size">size</label>
                         <Dropdown 
                             id= {styles.options_dropdown} 
-                            onChange= {getSize || ''}
+                            onChange= {getSize}
                             fluid 
                             labeled 
                             name= 'size'
@@ -46,7 +44,7 @@ export default ({form, setForm, product}) => {
                             value= {form?.options?.size || ''}
                             options={size}
                             selection
-                            style= {{ border: UI.border }}
+                            style= {{border: UI.border, backgroundColor: UI.body}}
                         />
                     </span>
                 }
@@ -57,7 +55,7 @@ export default ({form, setForm, product}) => {
                         <label htmlFor="color">color</label>
                         <Dropdown 
                             id= {styles.options_dropdown} 
-                            onChange= {getColor || ''}
+                            onChange= {getColor}
                             fluid 
                             labeled 
                             name= 'color'
@@ -66,7 +64,7 @@ export default ({form, setForm, product}) => {
                             value= {form?.options?.color || ''}
                             options={color}
                             selection
-                            style= {{ border: UI.border }}
+                            style= {{border: UI.border, backgroundColor: UI.body}}
                         />
                     </span> 
                 }

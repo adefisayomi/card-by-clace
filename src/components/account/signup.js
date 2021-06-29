@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Button, Checkbox, Form, Input } from "semantic-ui-react";
 import { GlobalState } from "../../context/globalState";
 import GoogleButton from './buttons'
 import Link from 'next/link'
@@ -29,7 +29,7 @@ export default function signup () {
     }
 
     return(
-        <CardLayout  header= 'Card by clace' redirect= {user}>
+        <CardLayout  header= 'Card by clace' redirect= {user} width= '500px'>
             <div className= {styles.signup} style= {{ color: UI.color }}>
                 <div className= {styles.signup_container}>
                     <div className= {styles.signup_options}>
@@ -42,7 +42,7 @@ export default function signup () {
                                 placeholder= 'Username'
                                 name= 'username'
                                 type= 'text'value= {form.username || ''}
-                                style= {{border: UI.border}}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                                 id= {styles.form_input}
                                 onChange= {getForm}
                             />
@@ -50,7 +50,7 @@ export default function signup () {
                                 placeholder= 'Email'
                                 name= 'email'
                                 type= 'text'value= {form.email || ''}
-                                style= {{border: UI.border}}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                                 id= {styles.form_input}
                                 onChange= {getForm}
                             />
@@ -59,7 +59,7 @@ export default function signup () {
                                 name= 'password'type= {showPass ? 'text' : 'password'}
                                 // icon= {{name: showPass ? 'eye' : 'eye slash', link: true, onClick: togglePass,  circular: UI.dark && true}}
                                 value= {form.password || ''}
-                                style= {{border: UI.border}}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                                 id= {styles.form_input}
                                 onChange= {getForm}
                             />
@@ -68,7 +68,7 @@ export default function signup () {
                                 content= {loading ? 'creating account...' : 'Create account'}
                                 icon= {{ name: loading && 'spinner', loading }}
                                 id= {styles.form_button}
-                                color= 'black'
+                                color= 'blue'
                                 type= 'submit'
                             />
                             <span>

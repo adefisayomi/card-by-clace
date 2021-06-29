@@ -1,0 +1,55 @@
+.action {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .action_options {
+        flex: 1 1;
+        display: flex;
+        align-items: center;
+
+        span {
+            width: fit-content;
+        }
+
+        .action_like {
+            display: flex;
+            color: rgb(29, 162, 250);
+            margin-right: 12px;
+            font-size: 12px;
+            position: relative;
+            align-items: baseline;
+        }
+        .action_like > p {
+            color: rgb(117, 117, 117);
+            font-size: 10px;
+            position: absolute;
+            right: 2px;
+            bottom: 5px;
+        }
+        .action_cart {
+            display: flex;
+            color: rgb(4, 12, 17);
+            margin-right: 12px;
+            font-size: 12px;
+            position: relative;
+            align-items: baseline;
+        }
+        .action_cart > p {
+            color: rgb(31, 158, 243);
+            font-size: 13px;
+            font-family: 'Roboto';
+            font-weight: 700;
+            transform: translateY(-4px);
+        }
+        
+        .action_share {
+            color: rgb(9, 160, 9);
+        }
+    }
+
+    .action_dropdown {
+        color: rgb(29, 162, 250);
+    }
+}

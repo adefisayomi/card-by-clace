@@ -2,15 +2,13 @@ import { Button, Icon } from 'semantic-ui-react'
 import styles from './style/button.module.css'
 import { GlobalState } from '../../context/globalState'
 import { useState } from 'react'
-import { useRouter } from 'next/router'
 
 export default function button ({path, content}) {
 
-    const router = useRouter()
     const {setAlert, userAction} = GlobalState()
     const [loading, setLoading] = useState(false)
 
-    const signInWithGoogle = async (e) => {
+    const signInWithGoogle = async (e) => {b
         e.preventDefault()
         setLoading(true)
 
@@ -31,6 +29,7 @@ export default function button ({path, content}) {
                     name= {loading ? 'spinner' : 'google'}
                     loading= {loading}
                     circular
+                    size= 'large'
                     color= 'blue'
                     fitted
                     link

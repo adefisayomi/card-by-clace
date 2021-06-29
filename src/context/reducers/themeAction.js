@@ -1,6 +1,7 @@
+import cookie from '../../utils/actions/cookie'
 
 export let themeObject = {
-    isDark: false,
+    isDark: true,
     dark: {
         body: 'rgb(22,27,34)',
         bgColor: 'rgb(9,12,16)',
@@ -23,7 +24,7 @@ export function themeReducer (state, action) {
     if(action.type === 'TOGGLE_UI'){
         themeObject = {...themeObject, isDark: !themeObject.isDark}
         state = themeObject.isDark ? themeObject.dark : themeObject.light
-        typeof window !== 'undefined' && localStorage.setItem('card_theme', JSON.stringify(state))
+        cookie.set('card_theme', state)
         return state
     }
     else {

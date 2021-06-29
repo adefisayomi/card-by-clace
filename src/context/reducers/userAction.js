@@ -76,7 +76,7 @@ const updateUser = async ({form, setAlert}) => {
     try{
         const data = convertToFormData(form)  //convert form to Form data
         const res = await axios.put(`/user`, data)
-        if(res && !res.data.success) throw new Error(res.data.message)
+        if(!res.data.success) throw new Error(res.data.message)
         setAlert({message: res.data.message})
         return trigger(`/user`)
     }

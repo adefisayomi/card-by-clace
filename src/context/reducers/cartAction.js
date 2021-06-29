@@ -1,46 +1,68 @@
+import {randomBytes} from 'crypto'
+import cookie from '../../utils/actions/cookie'
+
 export const cartReducer = (state,  action) => {
 
-    if (action.type === 'ADD_TO_CART') {
+    if (action.type === 'ADD') {
 
-        let cartRef = JSON.parse(window.localStorage.getItem('card_cart'))
+        let cartRef = cookie.get('card_cart')
         state = cartRef || []
-        // checl if the product is already in the cart
-        const productExist = state && state.length > 0 && state.filter(prod => prod._id === action.payload._id)[0]
+        const order = createOrder(action.payload)
+        // check if the product is already in the cart
+        const productExist = state && state.length > 0 && state.filter(prod => prod._id === order._id)[0]
         if(productExist) {
             // update product instaed
-            const productIndex = state.findIndex( prod => prod._id == action.payload._id )
-            state[productIndex] = action.payload
+            const productIndex = state.findIndex( prod => prod._id == order._id )
+            state[productIndex] = order
+            cookie.set('card_cart', state)
             return state
         }
         else {
-            state = [...state, action.payload, ]
-            window.localStorage.setItem('card_cart', JSON.stringify(state)) //update localStorage
+            state = order && [...state, order ]
+            cookie.set('card_cart', state)
             return state
         }
     }
-    if (action.type === 'UPDATE_CART') {
-        let cartRef = JSON.parse(window.localStorage.getItem('card_cart'))
+    if (action.type === 'UPDATE') {
+        let cartRef = cookie.get('card_cart')
+        const order = createOrder(action.payload)
         state = cartRef || []
         if (state.length > 0) {
-            const indexToUpdate = state.findIndex(prod => prod._id === action.payload._id)
-            state[indexToUpdate] = action.payload
-            window.localStorage.setItem('card_cart', JSON.stringify(state)) //update localStorage
+            const indexToUpdate = state.findIndex(prod => prod._id === order._id)
+            state[indexToUpdate] = order
+            cookie.set('card_cart', state) //update localStorage
             return state
         }
         return 
     }
-    if (action.type === 'REMOVE_FROM_CART') {
-        let cartRef = JSON.parse(window.localStorage.getItem('card_cart'))
+    if (action.type === 'REMOVE') {
+        let cartRef = cookie.get('card_cart')
         state = cartRef
         
         state = state.filter(prod => prod._id !== action.payload._id)
-        window.localStorage.setItem('card_cart', JSON.stringify(state)) //update localStorage
+        cookie.set('card_cart', state) //update localStorage
         return state
     }
-    if (action.type === 'CLEAR_CART') {
-        window.localStorage.removeItem('card_cart')
-        state = []
-        return state
+    if (action.type === 'CLEAR') {
+        cookie.set('card_cart', [])
+        return state = []
     }
-    return state
+    else return state
 }
+
+
+
+const createOrder = (payload) => {
+    const order = {
+     _id: payload._id,
+     quantity: payload.quantity,
+     options: {
+         color: payload.options.color,
+         size: payload.options.size,
+         note: payload.options.note,
+     },
+     price: payload.quantity * payload.price,
+     date: new Date()
+    }
+    return order
+ }

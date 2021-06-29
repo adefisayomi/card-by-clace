@@ -1,5 +1,5 @@
 import styles from './style/update_user.module.css'
-import {Form, Button, Icon, Dropdown, Divider} from 'semantic-ui-react'
+import {Form, Button, Icon, Dropdown, Divider, Input} from 'semantic-ui-react'
 import { useEffect, useState } from 'react'
 import {GlobalState} from '../../context/globalState'
 import {socialMediaOptions, genderOptions} from '../../utils/static_files/menu'
@@ -35,6 +35,11 @@ export default function update () {
        }
    }
 
+   const deleteSocialAccount = (e) => {
+    delete form.social_media[e.target.id]
+    setForm({...form})
+   }
+
    const handleSubmit = async (e) => {  //Submit form data for update
        e.preventDefault()
        setLoading(true)
@@ -65,7 +70,7 @@ export default function update () {
                                 name= 'name'
                                 type= 'text'
                                 value= { form.name || '' }
-                                style= {{ border: UI.border }}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                                 onChange= {getForm}
                             />
                         </Form.Field>
@@ -77,7 +82,7 @@ export default function update () {
                                     placeholder= 'email'
                                     name= 'email'
                                     type= 'text'
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                     value= { form.email || '' }
                                     onChange= {getForm}
                                 /> 
@@ -88,7 +93,7 @@ export default function update () {
                                     placeholder= 'username'
                                     name= 'username'
                                     type= 'text'
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                     value= { form.username || '' }
                                     onChange= {getForm}
                                 />
@@ -102,7 +107,7 @@ export default function update () {
                                     placeholder= 'phone number'
                                     name= 'phone'
                                     type= 'text'
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                     value= { form.phone || '' }
                                     onChange= {getForm}
                                 /> 
@@ -116,7 +121,7 @@ export default function update () {
                                     name= 'gender'
                                     id= {styles.profile_dropdown}
                                     type= 'text'
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                     value= { form.gender || '' }
                                     onChange= {getGender}
                                 />
@@ -129,7 +134,7 @@ export default function update () {
                                 placeholder= 'Office Adress...'
                                 name= 'address'
                                 type= 'text'
-                                style= {{ border: UI.border }}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                                 value= {form.address || ''}
                                 onChange= {getForm}
                             />
@@ -144,21 +149,21 @@ export default function update () {
                                     options= {socialMediaOptions}
                                     id= {styles.profile_dropdown}
                                     selection
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                     search
                                     onChange= {getSocialListName}
                                 />
                             </Form.Field>
                             <Form.Field>
                                 <label>Url</label>
-                                <input
+                                <Input
                                     placeholder= 'url...'
                                     name= 'url'
                                     type= 'text'
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body, color: UI.color, borderRadius: '3px'}}
                                     value= {socialList.url || ''}
                                     onChange= {getSocialListUrl}
-                                    icon= {{ inverted: true, name: 'plus', link: true, circular: true, onClick: getSocialMedia }}
+                                    icon= {{ name: 'plus', link: true, circular: true, onClick: getSocialMedia, color: 'blue' }}
                                 />
                             </Form.Field>
                             
@@ -171,6 +176,7 @@ export default function update () {
                                         <span className= {styles.social_media_list}>
                                             <Icon name= {data[0]} color= 'black' size= 'small' circular inverted />
                                             <a href= {data[1]} target= '_blank' >{data[1]}</a>
+                                            <Icon name= 'cancel' color= 'red'  circular id= {data[0]} onClick= {deleteSocialAccount} />
                                         </span>
                                         <Divider fitted/>
                                         </div>

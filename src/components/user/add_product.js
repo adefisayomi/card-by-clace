@@ -71,7 +71,7 @@ export default function CreateProduct () {
                             value= {form.category || ''}
                             options= {businessCategory || []}
                             onChange= {getCategory}
-                            style= {{ border: UI.border }}
+                            style= {{border: UI.border, backgroundColor: UI.body}}
                             id= {styles.add_product_dropdown}
                         />
                     </Form.Field>
@@ -84,7 +84,7 @@ export default function CreateProduct () {
                             type= 'text'
                             value= {form.title || ''}
                             onChange= {getForm}
-                            style= {{ border: UI.border }}
+                            style= {{border: UI.border, backgroundColor: UI.body}}
                         />
                     </Form.Field> 
 
@@ -97,7 +97,7 @@ export default function CreateProduct () {
                                     type= 'number'
                                     value= {form.price || ''}
                                     onChange= {getForm}
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                 />
                             </Form.Field>
                             <Form.Field>
@@ -110,7 +110,7 @@ export default function CreateProduct () {
                                     type= 'number'
                                     value= {form.quantity || ''}
                                     onChange= {getForm}
-                                    style= {{ border: UI.border }}
+                                    style= {{border: UI.border, backgroundColor: UI.body}}
                                 />
                             </Form.Field> 
                         </Form.Group>
@@ -136,7 +136,7 @@ export default function CreateProduct () {
                                         size -- 
                                         <input
                                             value= {form.options.size || ''}
-                                            style= {{ border: UI.border }}
+                                            style= {{border: UI.border, backgroundColor: UI.body}}
                                             type="text" name="size" id="size"
                                             placeholder= 'seperate values with a comma'
                                             onChange = {getOptions}
@@ -148,7 +148,7 @@ export default function CreateProduct () {
                                         color -- 
                                         <input 
                                             value= {form.options.color || ''}
-                                            style= {{ border: UI.border }}
+                                            style= {{border: UI.border, backgroundColor: UI.body}}
                                             type="text" name="color" id="color"
                                             placeholder= 'seperate values with a comma'
                                             onChange = {getOptions}
@@ -164,7 +164,7 @@ export default function CreateProduct () {
                                 name= 'description'
                                 value= {form.description || ''}
                                 onChange= {getForm}
-                                style= {{ border: UI.border }}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                             />
                         </Form.Field> 
                         <Button

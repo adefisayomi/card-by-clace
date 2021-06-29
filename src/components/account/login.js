@@ -43,7 +43,7 @@ export default function login () {
                                 name= 'username'
                                 type= 'text'
                                 value= {form.username || ''}
-                                style= {{border: UI.border}}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                                 id= {styles.form_input}
                                 onChange= {getForm}
                                 />
@@ -52,13 +52,13 @@ export default function login () {
                                 name= 'password'
                                 type= {showPass ? 'text' : 'password'}
                                 value= {form.password || ''}
-                                style= {{border: UI.border}}
+                                style= {{border: UI.border, backgroundColor: UI.body}}
                                 id= {styles.form_input}
                                 onChange= {getForm}
                             />
                             <Button
                                 content= { loading ? 'verifying...' : 'Log in' }
-                                color= 'black'
+                                color= 'blue'
                                 type= 'submit'
                                 id= {styles.form_button}
                                 icon= {{ name: loading && 'spinner', loading }}

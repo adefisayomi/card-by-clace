@@ -39,24 +39,26 @@ export default function productCard () {
                 </div>
 
                 <div className= {styles.productCard_action}>
-                    <span className= {styles.product_action}>
+                    <span>
                         <Action handleExpandClick= {handleExpandClick} expanded= {expanded} product= {product}  />
                     </span>
 
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <div className= {styles.product_order_form}>
-                            <OrderForm product = {product} />
-                        </div>
-                        <Divider />
-                        <CardMedia>
-                            <Comments product = {product} />
-                        </CardMedia>
-                        <CardMedia className= {styles.card_comment}>
-                            <CommentForm product = {product} />
-                        </CardMedia> 
-                    </Collapse>
+                    <span>
+                        <Collapse in={expanded} timeout="auto" unmountOnExit>
+                            <Divider />
+                            <div className= {styles.product_order_form}>
+                                <OrderForm product = {product} />
+                            </div>
+                            <Divider />
+                            <CardMedia>
+                                <Comments product = {product} />
+                            </CardMedia>
+                            <CardMedia className= {styles.card_comment}>
+                                <CommentForm product = {product} />
+                            </CardMedia> 
+                        </Collapse>
+                    </span>
                 </div>
-
             </div>
         </CardLayout>
     )

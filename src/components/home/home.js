@@ -37,7 +37,7 @@ useEffect(() => {
     //             setCount( prevState => prevState + productPerRequest )
     //             setSize( size + 1 )
     //         }
-    //     });
+    //     })
 
 
     const sizes = [ '200px', '230px', '250px', '270px','300px','340px','370px', '400px','450px']
@@ -49,7 +49,7 @@ useEffect(() => {
 
 
   return (
-      <div className= {styles.home} id= 'home' style= {{ color: UI.color, backgroundColor: UI.bgColor }}>
+      <div className= {styles.home} id= 'home'>
           
                 {
                     products && products.length > 0 ?

@@ -8,35 +8,32 @@ import { useEffect, useState } from 'react'
 
 export default function CartList ({props}) {
 
-    const {cartAction, UI} = GlobalState()
+    const {cartAction, UI, cart} = GlobalState()
     const {data: product} = useSWR(() => props ? `/products/query/${props._id}` : '', {revalidateOnFocus: true})
-    const [form, setForm] = useState({quantity: props.quantity || '', options: props.options || {}})
+    const [form, setForm] = useState({quantity: props?.quantity, options: props?.options})
+    const getNote = (e) => setForm({...form, options: { ...form.options, [e.target.name]: e.target.value }})
+    const getColor = (e, {value}) => setForm({...form, options: {...form.options, color: value}})
+    const getSize = (e, {value}) => setForm({...form, options: {...form.options, size: value}})
     const getForm = (e) => setForm({...form, [e.target.name]: e.target.value})
 
     const handleDelete =  () => {
         if(product) {
-            cartAction({type: 'REMOVE_FROM_CART', payload: {
-            _id: product._id
-            }})
+            cartAction({type: 'REMOVE', payload: {_id: product._id}})
         }
     }
 
     useEffect(() => {
         const updateCart = () => {
             if (product) {
-                cartAction({type: 'UPDATE_CART', payload: {
-                quantity: form.quantity,
-                note: form.note,
-                date:  new Date() ,
-                options: form.options,
-                price: parseInt(form.quantity) * parseInt(product.details?.price),
+                cartAction({type: 'UPDATE', payload: {
+                ...form,
+                price: product.details.price,
                 _id: product._id
             }})
             }
         }
         updateCart()
     }, [form])
-    
 
     return (
         <div className= {styles.cart_list} style= {{ borderBottom: UI.border }} >
@@ -47,7 +44,7 @@ export default function CartList ({props}) {
                     <Image src= { product?.details?.images[0].url || '' } />
                 </span>
                 <span className= {styles.cart_list_options}>
-                    <OrderOptions product= {product}  form= {form} setForm= {setForm} />
+                    <OrderOptions getColor= {getColor} getSize= {getSize} getForm= {getForm} form= {form} product= {product} />
                 </span>
                 <span className= {styles.cart_list_delete}>
                     <Icon
